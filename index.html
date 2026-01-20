@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenCode深度教程 - 从入门到精通的完全指南。全面讲解OpenCode的安装、配置、命令、快捷键、Agents、MCP协议等核心功能。">
+  <meta name="keywords" content="OpenCode, AI编程助手, 终端工具, 代码生成, Claude, GPT, LLM, 教程">
+  <meta name="author" content="OpenCode深度教程">
+  <title>OpenCode深度教程 - 从入门到精通的完全指南</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <style>
+    /* 首页Hero区域样式覆盖 */
+    .hero.hero-new.hero-split {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 60px !important;
+      text-align: left !important;
+      padding: 80px 40px !important;
+      max-width: 1200px !important;
+    }
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+    }
+    .hero-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 8px 16px !important;
+      background: rgba(16, 185, 129, 0.1) !important;
+      border: 1px solid rgba(16, 185, 129, 0.3) !important;
+      border-radius: 20px !important;
+      font-size: 0.9rem !important;
+      color: #10b981 !important;
+      margin-bottom: 32px !important;
+    }
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .hero-title-new {
+      margin-bottom: 32px !important;
+    }
+    .hero-title-new .title-highlight {
+      display: block !important;
+      font-size: 4rem !important;
+      font-weight: 800 !important;
+      font-style: italic !important;
+      background: linear-gradient(135deg, #10b981, #34d399) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      margin-bottom: 8px !important;
+      line-height: 1.1 !important;
+    }
+    .hero-title-new .title-dark {
+      display: block !important;
+      font-size: 3rem !important;
+      font-weight: 800 !important;
+      color: var(--text-primary) !important;
+      -webkit-text-fill-color: var(--text-primary) !important;
+      background: none !important;
+      line-height: 1.2 !important;
+    }
+    .hero-description-new {
+      font-size: 1.1rem !important;
+      color: var(--text-secondary) !important;
+      max-width: 550px !important;
+      line-height: 1.8 !important;
+      margin-bottom: 36px !important;
+      text-align: left !important;
+    }
+    .hero-buttons-new {
+      display: flex !important;
+      gap: 16px !important;
+      margin-bottom: 40px !important;
+      flex-wrap: wrap !important;
+      justify-content: flex-start !important;
+    }
+    .btn-primary-new {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      padding: 14px 28px !important;
+      background: #10b981 !important;
+      color: white !important;
+      border-radius: 10px !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+    }
+    .btn-primary-new:hover {
+      background: #059669 !important;
+      text-decoration: none !important;
+      color: white !important;
+    }
+    .btn-outline-new {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      padding: 14px 28px !important;
+      background: var(--bg-secondary) !important;
+      color: var(--text-primary) !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: 10px !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+    }
+    .btn-outline-new:hover {
+      background: var(--bg-tertiary) !important;
+      text-decoration: none !important;
+    }
+    .hero-stats {
+      display: flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+    }
+    .stats-avatars {
+      display: flex !important;
+    }
+    .stats-avatars .avatar {
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 50% !important;
+      background: linear-gradient(135deg, #64748b, #475569) !important;
+      border: 2px solid var(--bg-primary) !important;
+      margin-left: -10px !important;
+    }
+    .stats-avatars .avatar:first-child {
+      margin-left: 0 !important;
+    }
+    .stats-info {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      font-size: 0.95rem !important;
+    }
+    .stats-rating {
+      color: #fbbf24 !important;
+      font-weight: 600 !important;
+    }
+    .stats-text {
+      color: var(--text-secondary) !important;
+    }
+
+    /* 右侧二维码区域 */
+    .hero-qr-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .hero-qr-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hero-qr-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    .hero-qr-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      flex-shrink: 0;
+    }
+    .hero-qr-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-qr-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .qr-label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .qr-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 900px) {
+      .hero.hero-new.hero-split {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 60px 20px !important;
+        gap: 40px !important;
+      }
+      .hero-content {
+        max-width: 100%;
+      }
+      .hero-description-new {
+        max-width: 100% !important;
+        text-align: center !important;
+      }
+      .hero-buttons-new {
+        justify-content: center !important;
+      }
+      .hero-stats {
+        justify-content: center !important;
+      }
+      .hero-qr-section {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .hero-title-new .title-highlight {
+        font-size: 2.5rem !important;
+      }
+      .hero-title-new .title-dark {
+        font-size: 2rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <div class="logo">OC</div>
+      <span>OpenCode深度教程</span>
+    </a>
+
+    <div class="navbar-nav">
+      <a href="index.html">首页</a>
+      <a href="tutorial/1.1-what-is-opencode.html">教程</a>
+      <a href="community.html">社群</a>
+      <a href="https://opencode.ai/docs" target="_blank">官方文档</a>
+      <a href="https://github.com/anomalyco/opencode" target="_blank">GitHub</a>
+    </div>
+
+    <div class="navbar-right">
+      <div class="search-box">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" placeholder="搜索教程...">
+        <div class="search-results"></div>
+      </div>
+
+      <button class="theme-toggle" aria-label="切换主题">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 主内容区 -->
+  <main style="margin-top: 60px;">
+    <!-- Hero区域 -->
+    <section class="hero hero-new hero-split">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          开发者专属 · 100% 免费文档
+        </div>
+        <h1 class="hero-title-new">
+          <span class="title-highlight">OpenCode</span>
+          <span class="title-dark">免费从入门到精通</span>
+        </h1>
+        <p class="hero-description-new">
+          专为开发者打造的终极文档指南。从环境配置到构建自定义 AI 智能体，这套免费教程将帮助您掌握下一代编程工具，提升 3 倍开发效率。
+        </p>
+        <div class="hero-buttons-new">
+          <a href="tutorial/1.1-what-is-opencode.html" class="btn btn-primary-new">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            开始免费阅读
+          </a>
+          <a href="https://opencode.ai" target="_blank" class="btn btn-outline-new">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="4 17 10 11 4 5"></polyline>
+              <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+            访问官网
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stats-avatars">
+            <div class="avatar"></div>
+            <div class="avatar"></div>
+            <div class="avatar"></div>
+          </div>
+          <div class="stats-info">
+            <span class="stats-rating">⭐ 5.0</span>
+            <span class="stats-text">(1,240 评分) · 10,000+ 开发者加入</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-qr-section">
+        <div class="hero-qr-card">
+          <div class="hero-qr-image">
+            <img src="images/qr_xhs.png" alt="小红书二维码">
+          </div>
+          <div class="hero-qr-info">
+            <span class="qr-label">📕 小红书</span>
+            <span class="qr-text">关注获取更多技巧</span>
+          </div>
+        </div>
+        <div class="hero-qr-card">
+          <div class="hero-qr-image">
+            <img src="images/个人微信.jpg" alt="微信二维码">
+          </div>
+          <div class="hero-qr-info">
+            <span class="qr-label">💬 微信</span>
+            <span class="qr-text">加我拉你进群</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 特性介绍 -->
+    <section class="features">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3 class="feature-title">多平台支持</h3>
+        <p class="feature-description">支持终端TUI、Web界面、桌面应用和主流IDE扩展，随时随地编程。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">75+提供商</h3>
+        <p class="feature-description">支持Anthropic、OpenAI、Google、Azure等75+LLM提供商，自由选择模型。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">强大工具集</h3>
+        <p class="feature-description">内置bash、文件编辑、代码搜索、LSP等13+工具，满足各种开发需求。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">高度可定制</h3>
+        <p class="feature-description">灵活的配置系统，自定义Agents、主题、快捷键、权限等。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">Agents系统</h3>
+        <p class="feature-description">智能代理系统，支持Build、Plan等多种专业代理，提升开发效率。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <h3 class="feature-title">开源免费</h3>
+        <p class="feature-description">完全开源的AI编程助手，社区驱动，持续更新迭代。</p>
+      </div>
+    </section>
+
+    <!-- 章节列表 -->
+    <section class="chapter-list" id="chapter-list">
+      <!-- 由JavaScript动态生成 -->
+    </section>
+
+    <!-- 快速安装 -->
+    <section style="max-width: 800px; margin: 60px auto; padding: 0 20px;">
+      <h2 style="font-size: 1.75rem; font-weight: 600; color: var(--text-primary); margin-bottom: 24px; text-align: center;">快速安装</h2>
+
+      <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
+        <p style="color: var(--text-secondary); margin-bottom: 16px;">使用安装脚本一键安装 OpenCode：</p>
+        <div class="code-block">
+          <pre><code>curl -fsSL https://opencode.ai/install | bash</code></pre>
+        </div>
+
+        <p style="color: var(--text-secondary); margin: 20px 0 16px;">或使用包管理器安装：</p>
+        <div class="code-block">
+          <pre><code># npm
+npm install -g opencode
+
+# Homebrew (macOS)
+brew install opencode
+
+# pnpm
+pnpm add -g opencode</code></pre>
+        </div>
+
+        <p style="color: var(--text-muted); margin-top: 16px; font-size: 0.9rem;">
+          安装完成后，运行 <code>opencode</code> 命令即可启动。
+          <a href="tutorial/1.2-installation.html">查看详细安装指南 →</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://opencode.ai" target="_blank">官方网站</a>
+      <a href="https://opencode.ai/docs" target="_blank">官方文档</a>
+      <a href="https://github.com/anomalyco/opencode" target="_blank">GitHub</a>
+      <a href="https://opencode.ai/discord" target="_blank">Discord社区</a>
+    </div>
+    <p>OpenCode深度教程 - 基于官方文档整理</p>
+    <p style="margin-top: 8px; font-size: 0.8rem;">本教程仅供学习参考，如有错误请指正</p>
+  </footer>
+
+  <!-- 回到顶部按钮 -->
+  <button class="back-to-top" aria-label="回到顶部">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

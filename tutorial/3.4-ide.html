@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenCode IDE集成 - VS Code等IDE的集成使用">
+  <title>3.4 IDE集成 - OpenCode深度教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <nav class="navbar">
+    <button class="mobile-menu-btn" aria-label="菜单"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    <a href="../index.html" class="navbar-brand"><div class="logo">OC</div><span>OpenCode深度教程</span></a>
+    <div class="navbar-nav"><a href="../index.html">首页</a><a href="1.1-what-is-opencode.html">教程</a><a href="../community.html">社群</a><a href="https://opencode.ai/docs" target="_blank">官方文档</a><a href="https://github.com/anomalyco/opencode" target="_blank">GitHub</a></div>
+    <div class="navbar-right">
+      <div class="search-box"><svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input type="text" class="search-input" placeholder="搜索教程..."><div class="search-results"></div></div>
+      <button class="theme-toggle" aria-label="切换主题"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button>
+    </div>
+  </nav>
+
+  <aside class="sidebar"><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">第一章：入门指南</div><ul class="sidebar-nav"><li><a href="1.1-what-is-opencode.html"><span class="chapter-number">1.1</span>什么是OpenCode</a></li><li><a href="1.2-installation.html"><span class="chapter-number">1.2</span>安装OpenCode</a></li><li><a href="1.3-quickstart.html"><span class="chapter-number">1.3</span>快速开始</a></li><li><a href="1.4-terminal-requirements.html"><span class="chapter-number">1.4</span>终端要求</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第二章：基础配置</div><ul class="sidebar-nav"><li><a href="2.1-config-file.html"><span class="chapter-number">2.1</span>配置文件详解</a></li><li><a href="2.2-providers.html"><span class="chapter-number">2.2</span>AI提供商配置</a></li><li><a href="2.3-models.html"><span class="chapter-number">2.3</span>模型选择与配置</a></li><li><a href="2.4-environment.html"><span class="chapter-number">2.4</span>环境变量设置</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第三章：界面操作</div><ul class="sidebar-nav"><li><a href="3.1-tui.html"><span class="chapter-number">3.1</span>TUI终端界面</a></li><li><a href="3.2-cli.html"><span class="chapter-number">3.2</span>CLI命令行接口</a></li><li><a href="3.3-web.html"><span class="chapter-number">3.3</span>Web界面</a></li><li><a href="3.4-ide.html" class="active"><span class="chapter-number">3.4</span>IDE集成</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第四章：核心功能</div><ul class="sidebar-nav"><li><a href="4.1-tools.html"><span class="chapter-number">4.1</span>内置工具详解</a></li><li><a href="4.2-commands.html"><span class="chapter-number">4.2</span>斜杠命令</a></li><li><a href="4.3-keybinds.html"><span class="chapter-number">4.3</span>快捷键参考</a></li><li><a href="4.4-file-reference.html"><span class="chapter-number">4.4</span>文件引用与搜索</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第五章：高级配置</div><ul class="sidebar-nav"><li><a href="5.1-agents.html"><span class="chapter-number">5.1</span>Agents代理系统</a></li><li><a href="5.2-rules.html"><span class="chapter-number">5.2</span>Rules规则配置</a></li><li><a href="5.3-themes.html"><span class="chapter-number">5.3</span>主题配置</a></li><li><a href="5.4-permissions.html"><span class="chapter-number">5.4</span>权限系统</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第六章：扩展功能</div><ul class="sidebar-nav"><li><a href="6.1-lsp.html"><span class="chapter-number">6.1</span>LSP语言服务器</a></li><li><a href="6.2-formatters.html"><span class="chapter-number">6.2</span>代码格式化器</a></li><li><a href="6.3-custom-commands.html"><span class="chapter-number">6.3</span>自定义命令</a></li><li><a href="6.4-mcp.html"><span class="chapter-number">6.4</span>MCP协议服务器</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第七章：开发与集成</div><ul class="sidebar-nav"><li><a href="7.1-sdk.html"><span class="chapter-number">7.1</span>SDK使用指南</a></li><li><a href="7.2-network.html"><span class="chapter-number">7.2</span>网络配置</a></li><li><a href="7.3-enterprise.html"><span class="chapter-number">7.3</span>企业版功能</a></li><li><a href="7.4-troubleshooting.html"><span class="chapter-number">7.4</span>故障排除</a></li></ul></div></div></aside>
+
+  <main class="main-content">
+    <nav class="breadcrumb">
+      <a href="../index.html">首页</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="3.1-tui.html">第三章</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>IDE集成</span>
+    </nav>
+
+    <article>
+      <header class="article-header">
+        <h1 class="article-title">3.4 IDE集成</h1>
+        <div class="article-meta">
+          <span class="tag">界面</span>
+          <span>第三章：界面操作</span>
+        </div>
+      </header>
+
+      <div class="article-content">
+        <p>OpenCode提供与VS Code、Cursor等IDE的无缝集成，通过终端访问实现。</p>
+
+        <h2>支持的IDE</h2>
+        <ul>
+          <li>VS Code</li>
+          <li>Cursor</li>
+          <li>Windsurf</li>
+          <li>VSCodium</li>
+          <li>其他兼容VS Code的编辑器</li>
+        </ul>
+
+        <h2>安装扩展</h2>
+        <p>在IDE的集成终端中运行 <code>opencode</code>，扩展会自动安装。也可以在扩展市场搜索"OpenCode"手动安装。</p>
+
+        <h2>快捷键</h2>
+        <table>
+          <thead><tr><th>功能</th><th>macOS</th><th>Windows/Linux</th></tr></thead>
+          <tbody>
+            <tr><td>打开/聚焦OpenCode</td><td><code>Cmd+Esc</code></td><td><code>Ctrl+Esc</code></td></tr>
+            <tr><td>新建会话</td><td><code>Cmd+Shift+Esc</code></td><td><code>Ctrl+Shift+Esc</code></td></tr>
+            <tr><td>插入文件引用</td><td><code>Cmd+Option+K</code></td><td><code>Alt+Ctrl+K</code></td></tr>
+          </tbody>
+        </table>
+
+        <h2>上下文共享</h2>
+        <p>扩展自动将当前文件选择或活动标签页共享给OpenCode。使用文件引用语法：</p>
+        <pre><code>@File#L37-42  # 引用37-42行</code></pre>
+
+        <h2>功能特性</h2>
+        <ul>
+          <li><strong>分屏终端</strong>：OpenCode在分屏终端中打开</li>
+          <li><strong>上下文感知</strong>：自动获取当前文件信息</li>
+          <li><strong>快速启动</strong>：一键打开或聚焦</li>
+          <li><strong>会话管理</strong>：支持多会话切换</li>
+        </ul>
+
+        <h2>故障排除</h2>
+        <p>如果自动安装失败：</p>
+        <ol>
+          <li>确保在IDE的集成终端中运行 <code>opencode</code></li>
+          <li>验证IDE的CLI工具已安装（<code>code</code>、<code>cursor</code>等）</li>
+          <li>通过命令面板安装shell命令</li>
+          <li>确认扩展安装权限已启用</li>
+        </ol>
+
+        <h2>下一步</h2>
+        <p>了解界面操作后，接下来深入学习OpenCode的核心功能。</p>
+      </div>
+
+      <nav class="article-nav">
+        <a href="3.3-web.html" class="article-nav-item prev">
+          <div class="article-nav-label">← 上一篇</div>
+          <div class="article-nav-title">3.3 Web界面</div>
+        </a>
+        <a href="4.1-tools.html" class="article-nav-item next">
+          <div class="article-nav-label">下一篇 →</div>
+          <div class="article-nav-title">4.1 内置工具详解</div>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <nav class="toc"><div class="toc-title">本页目录</div><ul class="toc-list"></ul></nav>
+  <button class="back-to-top" aria-label="回到顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenCode代码格式化器配置 - 自动格式化和内置格式化器">
+  <title>6.2 代码格式化器 - OpenCode深度教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <nav class="navbar"><button class="mobile-menu-btn" aria-label="菜单"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button><a href="../index.html" class="navbar-brand"><div class="logo">OC</div><span>OpenCode深度教程</span></a><div class="navbar-nav"><a href="../index.html">首页</a><a href="1.1-what-is-opencode.html">教程</a><a href="../community.html">社群</a><a href="https://opencode.ai/docs" target="_blank">官方文档</a><a href="https://github.com/anomalyco/opencode" target="_blank">GitHub</a></div><div class="navbar-right"><div class="search-box"><svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input type="text" class="search-input" placeholder="搜索教程..."><div class="search-results"></div></div><button class="theme-toggle" aria-label="切换主题"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button></div></nav>
+  <aside class="sidebar"><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">第一章：入门指南</div><ul class="sidebar-nav"><li><a href="1.1-what-is-opencode.html"><span class="chapter-number">1.1</span>什么是OpenCode</a></li><li><a href="1.2-installation.html"><span class="chapter-number">1.2</span>安装OpenCode</a></li><li><a href="1.3-quickstart.html"><span class="chapter-number">1.3</span>快速开始</a></li><li><a href="1.4-terminal-requirements.html"><span class="chapter-number">1.4</span>终端要求</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第二章：基础配置</div><ul class="sidebar-nav"><li><a href="2.1-config-file.html"><span class="chapter-number">2.1</span>配置文件详解</a></li><li><a href="2.2-providers.html"><span class="chapter-number">2.2</span>AI提供商配置</a></li><li><a href="2.3-models.html"><span class="chapter-number">2.3</span>模型选择与配置</a></li><li><a href="2.4-environment.html"><span class="chapter-number">2.4</span>环境变量设置</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第三章：界面操作</div><ul class="sidebar-nav"><li><a href="3.1-tui.html"><span class="chapter-number">3.1</span>TUI终端界面</a></li><li><a href="3.2-cli.html"><span class="chapter-number">3.2</span>CLI命令行接口</a></li><li><a href="3.3-web.html"><span class="chapter-number">3.3</span>Web界面</a></li><li><a href="3.4-ide.html"><span class="chapter-number">3.4</span>IDE集成</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第四章：核心功能</div><ul class="sidebar-nav"><li><a href="4.1-tools.html"><span class="chapter-number">4.1</span>内置工具详解</a></li><li><a href="4.2-commands.html"><span class="chapter-number">4.2</span>斜杠命令</a></li><li><a href="4.3-keybinds.html"><span class="chapter-number">4.3</span>快捷键参考</a></li><li><a href="4.4-file-reference.html"><span class="chapter-number">4.4</span>文件引用与搜索</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第五章：高级配置</div><ul class="sidebar-nav"><li><a href="5.1-agents.html"><span class="chapter-number">5.1</span>Agents代理系统</a></li><li><a href="5.2-rules.html"><span class="chapter-number">5.2</span>Rules规则配置</a></li><li><a href="5.3-themes.html"><span class="chapter-number">5.3</span>主题配置</a></li><li><a href="5.4-permissions.html"><span class="chapter-number">5.4</span>权限系统</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第六章：扩展功能</div><ul class="sidebar-nav"><li><a href="6.1-lsp.html"><span class="chapter-number">6.1</span>LSP语言服务器</a></li><li><a href="6.2-formatters.html" class="active"><span class="chapter-number">6.2</span>代码格式化器</a></li><li><a href="6.3-custom-commands.html"><span class="chapter-number">6.3</span>自定义命令</a></li><li><a href="6.4-mcp.html"><span class="chapter-number">6.4</span>MCP协议服务器</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第七章：开发与集成</div><ul class="sidebar-nav"><li><a href="7.1-sdk.html"><span class="chapter-number">7.1</span>SDK使用指南</a></li><li><a href="7.2-network.html"><span class="chapter-number">7.2</span>网络配置</a></li><li><a href="7.3-enterprise.html"><span class="chapter-number">7.3</span>企业版功能</a></li><li><a href="7.4-troubleshooting.html"><span class="chapter-number">7.4</span>故障排除</a></li></ul></div></div></aside>
+  <main class="main-content">
+    <nav class="breadcrumb"><a href="../index.html">首页</a><span class="breadcrumb-separator">/</span><a href="6.1-lsp.html">第六章</a><span class="breadcrumb-separator">/</span><span>代码格式化器</span></nav>
+    <article>
+      <header class="article-header"><h1 class="article-title">6.2 代码格式化器</h1><div class="article-meta"><span class="tag">扩展功能</span><span>第六章：扩展功能</span></div></header>
+      <div class="article-content">
+        <p>OpenCode内置了20+种代码格式化器，确保AI生成和修改的代码自动符合项目的代码风格规范。</p>
+
+        <h2>自动格式化功能</h2>
+        <p>当AI创建或修改文件时，OpenCode会自动应用相应的格式化器：</p>
+        <ul>
+          <li><strong>写入文件后</strong> - 自动格式化新创建的文件</li>
+          <li><strong>编辑文件后</strong> - 自动格式化修改的部分</li>
+          <li><strong>保存时</strong> - 在文件保存前进行格式化</li>
+        </ul>
+
+        <p>格式化器会自动检测并使用项目中的配置文件（如<code>.prettierrc</code>、<code>biome.json</code>等）。</p>
+
+        <h2>内置格式化器</h2>
+        <p>OpenCode内置支持以下格式化器：</p>
+
+        <table>
+          <thead><tr><th>格式化器</th><th>支持的语言</th><th>配置文件</th></tr></thead>
+          <tbody>
+            <tr><td>Prettier</td><td>JS, TS, CSS, HTML, JSON, YAML, MD</td><td>.prettierrc, prettier.config.js</td></tr>
+            <tr><td>Biome</td><td>JS, TS, JSON, CSS</td><td>biome.json</td></tr>
+            <tr><td>ESLint</td><td>JS, TS</td><td>.eslintrc, eslint.config.js</td></tr>
+            <tr><td>Ruff</td><td>Python</td><td>ruff.toml, pyproject.toml</td></tr>
+            <tr><td>Black</td><td>Python</td><td>pyproject.toml</td></tr>
+            <tr><td>autopep8</td><td>Python</td><td>setup.cfg, tox.ini</td></tr>
+            <tr><td>gofmt</td><td>Go</td><td>无需配置</td></tr>
+            <tr><td>goimports</td><td>Go</td><td>无需配置</td></tr>
+            <tr><td>rustfmt</td><td>Rust</td><td>rustfmt.toml</td></tr>
+            <tr><td>clang-format</td><td>C, C++, Java</td><td>.clang-format</td></tr>
+            <tr><td>shfmt</td><td>Shell/Bash</td><td>.editorconfig</td></tr>
+            <tr><td>sql-formatter</td><td>SQL</td><td>无需配置</td></tr>
+            <tr><td>terraform fmt</td><td>Terraform</td><td>无需配置</td></tr>
+            <tr><td>rubocop</td><td>Ruby</td><td>.rubocop.yml</td></tr>
+            <tr><td>mix format</td><td>Elixir</td><td>.formatter.exs</td></tr>
+            <tr><td>swift-format</td><td>Swift</td><td>.swift-format</td></tr>
+            <tr><td>ktlint</td><td>Kotlin</td><td>.editorconfig</td></tr>
+            <tr><td>php-cs-fixer</td><td>PHP</td><td>.php-cs-fixer.php</td></tr>
+            <tr><td>stylua</td><td>Lua</td><td>stylua.toml</td></tr>
+            <tr><td>zigfmt</td><td>Zig</td><td>无需配置</td></tr>
+          </tbody>
+        </table>
+
+        <h2>配置方法</h2>
+
+        <h3>基本配置结构</h3>
+        <pre><code>{
+  "format": {
+    "javascript": {
+      "command": ["prettier", "--write"],
+      "extensions": [".js", ".jsx"],
+      "disabled": false
+    }
+  }
+}</code></pre>
+
+        <h3>指定格式化器</h3>
+        <pre><code>{
+  "format": {
+    "typescript": {
+      "command": ["biome", "format", "--write"]
+    },
+    "python": {
+      "command": ["ruff", "format"]
+    },
+    "go": {
+      "command": ["goimports", "-w"]
+    }
+  }
+}</code></pre>
+
+        <h3>带选项的配置</h3>
+        <pre><code>{
+  "format": {
+    "javascript": {
+      "command": [
+        "prettier",
+        "--write",
+        "--tab-width", "2",
+        "--single-quote",
+        "--trailing-comma", "es5"
+      ]
+    }
+  }
+}</code></pre>
+
+        <h3>使用项目本地的格式化器</h3>
+        <pre><code>{
+  "format": {
+    "typescript": {
+      "command": ["npx", "prettier", "--write"]
+    },
+    "python": {
+      "command": ["poetry", "run", "black"]
+    }
+  }
+}</code></pre>
+
+        <h2>禁用方法</h2>
+
+        <h3>禁用特定语言的格式化</h3>
+        <pre><code>{
+  "format": {
+    "markdown": {
+      "disabled": true
+    },
+    "json": {
+      "disabled": true
+    }
+  }
+}</code></pre>
+
+        <h3>禁用所有格式化</h3>
+        <pre><code>{
+  "format": {
+    "*": {
+      "disabled": true
+    }
+  }
+}</code></pre>
+
+        <h3>通过环境变量禁用</h3>
+        <pre><code># 禁用所有格式化
+export OPENCODE_FORMAT_DISABLED=true
+
+# 禁用特定语言
+export OPENCODE_FORMAT_DISABLED_PYTHON=true</code></pre>
+
+        <h2>自定义格式化器</h2>
+        <p>可以为任意文件类型添加自定义格式化器：</p>
+
+        <h3>添加新格式化器</h3>
+        <pre><code>{
+  "format": {
+    "custom": {
+      "command": ["my-formatter", "--fix"],
+      "extensions": [".custom", ".cust"]
+    }
+  }
+}</code></pre>
+
+        <h3>使用脚本作为格式化器</h3>
+        <pre><code>{
+  "format": {
+    "special": {
+      "command": ["./scripts/format.sh"],
+      "extensions": [".special"]
+    }
+  }
+}</code></pre>
+
+        <h3>链式格式化器</h3>
+        <p>可以通过脚本将多个格式化器串联：</p>
+        <pre><code># scripts/format-ts.sh
+#!/bin/bash
+eslint --fix "$1"
+prettier --write "$1"</code></pre>
+        <pre><code>{
+  "format": {
+    "typescript": {
+      "command": ["./scripts/format-ts.sh"]
+    }
+  }
+}</code></pre>
+
+        <h2>格式化优先级</h2>
+        <p>当多个格式化器可用时，OpenCode按以下优先级选择：</p>
+        <ol>
+          <li>配置文件中明确指定的格式化器</li>
+          <li>项目中检测到的格式化器配置文件</li>
+          <li>系统中安装的默认格式化器</li>
+        </ol>
+
+        <div class="tip-box info">
+          <div class="tip-box-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>提示</div>
+          <div class="tip-box-content">
+            <p>如果项目中有<code>.prettierrc</code>文件，Prettier会自动被选为JS/TS的格式化器。</p>
+            <p>如果有<code>biome.json</code>，Biome会被优先使用。</p>
+          </div>
+        </div>
+
+        <h2>常见配置示例</h2>
+
+        <h3>前端项目（Prettier + ESLint）</h3>
+        <pre><code>{
+  "format": {
+    "javascript": {
+      "command": ["npx", "prettier", "--write"]
+    },
+    "typescript": {
+      "command": ["npx", "prettier", "--write"]
+    },
+    "css": {
+      "command": ["npx", "prettier", "--write"]
+    },
+    "html": {
+      "command": ["npx", "prettier", "--write"]
+    }
+  }
+}</code></pre>
+
+        <h3>Python项目（Ruff）</h3>
+        <pre><code>{
+  "format": {
+    "python": {
+      "command": ["ruff", "format"]
+    }
+  }
+}</code></pre>
+
+        <h3>Go项目</h3>
+        <pre><code>{
+  "format": {
+    "go": {
+      "command": ["goimports", "-w"]
+    }
+  }
+}</code></pre>
+
+        <h3>多语言项目</h3>
+        <pre><code>{
+  "format": {
+    "typescript": {
+      "command": ["npx", "biome", "format", "--write"]
+    },
+    "python": {
+      "command": ["black"]
+    },
+    "go": {
+      "command": ["gofmt", "-w"]
+    },
+    "rust": {
+      "command": ["rustfmt"]
+    }
+  }
+}</code></pre>
+
+        <h2>故障排除</h2>
+
+        <h3>格式化不生效</h3>
+        <ul>
+          <li>检查格式化器是否已安装：<code>which prettier</code></li>
+          <li>确认文件扩展名在extensions列表中</li>
+          <li>检查是否被disabled设置禁用</li>
+        </ul>
+
+        <h3>格式化结果不符合预期</h3>
+        <ul>
+          <li>检查项目配置文件（如<code>.prettierrc</code>）的设置</li>
+          <li>确认使用的是正确的格式化器</li>
+          <li>尝试在命令行直接运行格式化器测试</li>
+        </ul>
+
+        <div class="tip-box warning">
+          <div class="tip-box-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>注意</div>
+          <div class="tip-box-content">如果格式化器执行出错，OpenCode会保留原始内容，不会丢失代码。</div>
+        </div>
+
+        <h2>下一步</h2>
+        <p>接下来学习如何创建自定义命令，扩展OpenCode的功能。</p>
+      </div>
+      <nav class="article-nav">
+        <a href="6.1-lsp.html" class="article-nav-item prev"><div class="article-nav-label">← 上一篇</div><div class="article-nav-title">6.1 LSP语言服务器</div></a>
+        <a href="6.3-custom-commands.html" class="article-nav-item next"><div class="article-nav-label">下一篇 →</div><div class="article-nav-title">6.3 自定义命令</div></a>
+      </nav>
+    </article>
+  </main>
+  <nav class="toc"><div class="toc-title">本页目录</div><ul class="toc-list"></ul></nav>
+  <button class="back-to-top" aria-label="回到顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

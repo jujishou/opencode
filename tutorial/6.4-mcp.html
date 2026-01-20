@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenCode MCP协议服务器配置 - Model Context Protocol集成指南">
+  <title>6.4 MCP协议服务器 - OpenCode深度教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <nav class="navbar"><button class="mobile-menu-btn" aria-label="菜单"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button><a href="../index.html" class="navbar-brand"><div class="logo">OC</div><span>OpenCode深度教程</span></a><div class="navbar-nav"><a href="../index.html">首页</a><a href="1.1-what-is-opencode.html">教程</a><a href="../community.html">社群</a><a href="https://opencode.ai/docs" target="_blank">官方文档</a><a href="https://github.com/anomalyco/opencode" target="_blank">GitHub</a></div><div class="navbar-right"><div class="search-box"><svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input type="text" class="search-input" placeholder="搜索教程..."><div class="search-results"></div></div><button class="theme-toggle" aria-label="切换主题"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button></div></nav>
+  <aside class="sidebar"><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">第一章：入门指南</div><ul class="sidebar-nav"><li><a href="1.1-what-is-opencode.html"><span class="chapter-number">1.1</span>什么是OpenCode</a></li><li><a href="1.2-installation.html"><span class="chapter-number">1.2</span>安装OpenCode</a></li><li><a href="1.3-quickstart.html"><span class="chapter-number">1.3</span>快速开始</a></li><li><a href="1.4-terminal-requirements.html"><span class="chapter-number">1.4</span>终端要求</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第二章：基础配置</div><ul class="sidebar-nav"><li><a href="2.1-config-file.html"><span class="chapter-number">2.1</span>配置文件详解</a></li><li><a href="2.2-providers.html"><span class="chapter-number">2.2</span>AI提供商配置</a></li><li><a href="2.3-models.html"><span class="chapter-number">2.3</span>模型选择与配置</a></li><li><a href="2.4-environment.html"><span class="chapter-number">2.4</span>环境变量设置</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第三章：界面操作</div><ul class="sidebar-nav"><li><a href="3.1-tui.html"><span class="chapter-number">3.1</span>TUI终端界面</a></li><li><a href="3.2-cli.html"><span class="chapter-number">3.2</span>CLI命令行接口</a></li><li><a href="3.3-web.html"><span class="chapter-number">3.3</span>Web界面</a></li><li><a href="3.4-ide.html"><span class="chapter-number">3.4</span>IDE集成</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第四章：核心功能</div><ul class="sidebar-nav"><li><a href="4.1-tools.html"><span class="chapter-number">4.1</span>内置工具详解</a></li><li><a href="4.2-commands.html"><span class="chapter-number">4.2</span>斜杠命令</a></li><li><a href="4.3-keybinds.html"><span class="chapter-number">4.3</span>快捷键参考</a></li><li><a href="4.4-file-reference.html"><span class="chapter-number">4.4</span>文件引用与搜索</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第五章：高级配置</div><ul class="sidebar-nav"><li><a href="5.1-agents.html"><span class="chapter-number">5.1</span>Agents代理系统</a></li><li><a href="5.2-rules.html"><span class="chapter-number">5.2</span>Rules规则配置</a></li><li><a href="5.3-themes.html"><span class="chapter-number">5.3</span>主题配置</a></li><li><a href="5.4-permissions.html"><span class="chapter-number">5.4</span>权限系统</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第六章：扩展功能</div><ul class="sidebar-nav"><li><a href="6.1-lsp.html"><span class="chapter-number">6.1</span>LSP语言服务器</a></li><li><a href="6.2-formatters.html"><span class="chapter-number">6.2</span>代码格式化器</a></li><li><a href="6.3-custom-commands.html"><span class="chapter-number">6.3</span>自定义命令</a></li><li><a href="6.4-mcp.html" class="active"><span class="chapter-number">6.4</span>MCP协议服务器</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第七章：开发与集成</div><ul class="sidebar-nav"><li><a href="7.1-sdk.html"><span class="chapter-number">7.1</span>SDK使用指南</a></li><li><a href="7.2-network.html"><span class="chapter-number">7.2</span>网络配置</a></li><li><a href="7.3-enterprise.html"><span class="chapter-number">7.3</span>企业版功能</a></li><li><a href="7.4-troubleshooting.html"><span class="chapter-number">7.4</span>故障排除</a></li></ul></div></div></aside>
+  <main class="main-content">
+    <nav class="breadcrumb"><a href="../index.html">首页</a><span class="breadcrumb-separator">/</span><a href="6.1-lsp.html">第六章</a><span class="breadcrumb-separator">/</span><span>MCP协议服务器</span></nav>
+    <article>
+      <header class="article-header"><h1 class="article-title">6.4 MCP协议服务器</h1><div class="article-meta"><span class="tag">扩展功能</span><span>第六章：扩展功能</span></div></header>
+      <div class="article-content">
+        <p>MCP（Model Context Protocol）是Anthropic开发的开放协议，让AI能够安全地与外部工具和数据源交互。OpenCode原生支持MCP，可以轻松扩展AI的能力。</p>
+
+        <h2>什么是MCP</h2>
+        <p>MCP（Model Context Protocol，模型上下文协议）是一个标准化的协议，定义了AI模型与外部系统之间的通信方式：</p>
+
+        <h3>核心概念</h3>
+        <ul>
+          <li><strong>工具（Tools）</strong> - AI可以调用的函数，如查询数据库、发送请求</li>
+          <li><strong>资源（Resources）</strong> - AI可以访问的数据源，如文件、API</li>
+          <li><strong>提示（Prompts）</strong> - 预定义的提示模板</li>
+        </ul>
+
+        <h3>MCP的优势</h3>
+        <ul>
+          <li><strong>标准化</strong> - 统一的协议，兼容多种AI工具</li>
+          <li><strong>安全性</strong> - 明确的权限控制和访问边界</li>
+          <li><strong>可扩展</strong> - 轻松添加新的工具和数据源</li>
+          <li><strong>开放生态</strong> - 丰富的开源MCP服务器可用</li>
+        </ul>
+
+        <h2>配置MCP服务器</h2>
+
+        <h3>基本配置结构</h3>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "server-name": {
+        "type": "stdio",
+        "command": "command-to-run",
+        "args": ["arg1", "arg2"],
+        "env": {
+          "ENV_VAR": "value"
+        }
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>配置项说明</h3>
+        <table>
+          <thead><tr><th>配置项</th><th>类型</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td><code>type</code></td><td>string</td><td>连接类型：<code>stdio</code>（标准输入输出）或<code>sse</code>（Server-Sent Events）</td></tr>
+            <tr><td><code>command</code></td><td>string</td><td>启动MCP服务器的命令</td></tr>
+            <tr><td><code>args</code></td><td>string[]</td><td>命令参数</td></tr>
+            <tr><td><code>env</code></td><td>object</td><td>环境变量</td></tr>
+            <tr><td><code>url</code></td><td>string</td><td>SSE类型时的服务器URL</td></tr>
+          </tbody>
+        </table>
+
+        <h3>stdio类型配置</h3>
+        <p>最常用的类型，通过标准输入输出与MCP服务器通信：</p>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "filesystem": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/dir"]
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>SSE类型配置</h3>
+        <p>通过HTTP SSE连接远程MCP服务器：</p>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "remote-server": {
+        "type": "sse",
+        "url": "https://mcp-server.example.com/sse"
+      }
+    }
+  }
+}</code></pre>
+
+        <h2>常见用例</h2>
+
+        <h3>文件系统访问</h3>
+        <p>允许AI访问特定目录的文件：</p>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "filesystem": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/user/documents"]
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>数据库查询</h3>
+        <p>让AI能够查询数据库：</p>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "postgres": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-postgres"],
+        "env": {
+          "DATABASE_URL": "postgresql://user:pass@localhost:5432/mydb"
+        }
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>GitHub集成</h3>
+        <p>让AI能够与GitHub交互：</p>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "github": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-github"],
+        "env": {
+          "GITHUB_TOKEN": "ghp_xxxxxxxxxxxx"
+        }
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>Web搜索</h3>
+        <p>让AI能够搜索网络：</p>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "brave-search": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+        "env": {
+          "BRAVE_API_KEY": "your-api-key"
+        }
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>Slack集成</h3>
+        <p>让AI能够发送Slack消息：</p>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "slack": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-slack"],
+        "env": {
+          "SLACK_BOT_TOKEN": "xoxb-xxxxxxxxxxxx"
+        }
+      }
+    }
+  }
+}</code></pre>
+
+        <h2>示例配置</h2>
+
+        <h3>完整的多服务器配置</h3>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "filesystem": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-filesystem", "./"],
+        "env": {}
+      },
+      "github": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-github"],
+        "env": {
+          "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+        }
+      },
+      "postgres": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-postgres"],
+        "env": {
+          "DATABASE_URL": "${DATABASE_URL}"
+        }
+      },
+      "memory": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-memory"]
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>使用Python MCP服务器</h3>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "custom-python": {
+        "type": "stdio",
+        "command": "python",
+        "args": ["-m", "my_mcp_server"],
+        "env": {
+          "PYTHONPATH": "/path/to/modules"
+        }
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>使用Docker运行MCP服务器</h3>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "docker-mcp": {
+        "type": "stdio",
+        "command": "docker",
+        "args": [
+          "run", "--rm", "-i",
+          "-v", "/path/to/data:/data",
+          "mcp-server-image"
+        ]
+      }
+    }
+  }
+}</code></pre>
+
+        <h2>常用MCP服务器</h2>
+
+        <div class="tip-box info">
+          <div class="tip-box-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>官方MCP服务器</div>
+          <div class="tip-box-content">
+            <ul>
+              <li><code>@modelcontextprotocol/server-filesystem</code> - 文件系统访问</li>
+              <li><code>@modelcontextprotocol/server-github</code> - GitHub API</li>
+              <li><code>@modelcontextprotocol/server-postgres</code> - PostgreSQL数据库</li>
+              <li><code>@modelcontextprotocol/server-sqlite</code> - SQLite数据库</li>
+              <li><code>@modelcontextprotocol/server-memory</code> - 知识图谱记忆</li>
+              <li><code>@modelcontextprotocol/server-brave-search</code> - Brave搜索</li>
+              <li><code>@modelcontextprotocol/server-google-maps</code> - Google地图</li>
+              <li><code>@modelcontextprotocol/server-slack</code> - Slack集成</li>
+              <li><code>@modelcontextprotocol/server-puppeteer</code> - 浏览器自动化</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>MCP工具权限</h2>
+        <p>MCP服务器提供的工具同样受OpenCode权限系统控制：</p>
+        <pre><code>{
+  "permission": {
+    "mcp:filesystem:read_file": "allow",
+    "mcp:filesystem:write_file": "ask",
+    "mcp:github:create_issue": "ask",
+    "mcp:postgres:query": "ask"
+  }
+}</code></pre>
+
+        <h2>调试MCP服务器</h2>
+
+        <h3>查看MCP日志</h3>
+        <pre><code># 启用MCP调试日志
+export OPENCODE_MCP_DEBUG=true
+opencode</code></pre>
+
+        <h3>测试MCP服务器</h3>
+        <pre><code># 手动启动MCP服务器测试
+npx -y @modelcontextprotocol/server-filesystem ./
+
+# 发送测试请求
+echo '{"jsonrpc":"2.0","method":"tools/list","id":1}' | npx -y @modelcontextprotocol/server-filesystem ./</code></pre>
+
+        <h2>自定义MCP服务器</h2>
+        <p>可以使用MCP SDK创建自定义服务器：</p>
+
+        <h3>TypeScript示例</h3>
+        <pre><code>// my-mcp-server/index.ts
+import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+
+const server = new Server(
+  { name: "my-server", version: "1.0.0" },
+  { capabilities: { tools: {} } }
+);
+
+server.setRequestHandler("tools/list", async () => ({
+  tools: [{
+    name: "my_tool",
+    description: "My custom tool",
+    inputSchema: {
+      type: "object",
+      properties: {
+        input: { type: "string" }
+      }
+    }
+  }]
+}));
+
+server.setRequestHandler("tools/call", async (request) => {
+  if (request.params.name === "my_tool") {
+    return { content: [{ type: "text", text: "Tool executed!" }] };
+  }
+});
+
+const transport = new StdioServerTransport();
+server.connect(transport);</code></pre>
+
+        <h3>Python示例</h3>
+        <pre><code># my_mcp_server/__main__.py
+import asyncio
+from mcp.server import Server
+from mcp.server.stdio import stdio_server
+
+app = Server("my-server")
+
+@app.list_tools()
+async def list_tools():
+    return [{
+        "name": "my_tool",
+        "description": "My custom tool",
+        "inputSchema": {
+            "type": "object",
+            "properties": {"input": {"type": "string"}}
+        }
+    }]
+
+@app.call_tool()
+async def call_tool(name: str, arguments: dict):
+    if name == "my_tool":
+        return [{"type": "text", "text": "Tool executed!"}]
+
+async def main():
+    async with stdio_server() as (read, write):
+        await app.run(read, write)
+
+asyncio.run(main())</code></pre>
+
+        <div class="tip-box warning">
+          <div class="tip-box-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>安全提示</div>
+          <div class="tip-box-content">
+            <ul>
+              <li>仔细审查第三方MCP服务器的代码</li>
+              <li>只授予必要的最小权限</li>
+              <li>敏感信息使用环境变量传递，不要硬编码</li>
+              <li>定期更新MCP服务器以获取安全补丁</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>故障排除</h2>
+
+        <h3>MCP服务器无法启动</h3>
+        <ul>
+          <li>检查command路径是否正确</li>
+          <li>确认依赖已安装（如npx需要Node.js）</li>
+          <li>查看错误日志获取详细信息</li>
+        </ul>
+
+        <h3>工具调用失败</h3>
+        <ul>
+          <li>检查环境变量是否正确设置</li>
+          <li>确认API密钥有效</li>
+          <li>验证网络连接（对于需要网络的服务器）</li>
+        </ul>
+
+        <h2>下一步</h2>
+        <p>扩展功能介绍完毕，接下来学习OpenCode的SDK使用和开发集成。</p>
+      </div>
+      <nav class="article-nav">
+        <a href="6.3-custom-commands.html" class="article-nav-item prev"><div class="article-nav-label">← 上一篇</div><div class="article-nav-title">6.3 自定义命令</div></a>
+        <a href="7.1-sdk.html" class="article-nav-item next"><div class="article-nav-label">下一篇 →</div><div class="article-nav-title">7.1 SDK使用指南</div></a>
+      </nav>
+    </article>
+  </main>
+  <nav class="toc"><div class="toc-title">本页目录</div><ul class="toc-list"></ul></nav>
+  <button class="back-to-top" aria-label="回到顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

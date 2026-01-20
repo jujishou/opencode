@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenCode TUI终端界面 - 终端用户界面完整指南">
+  <title>3.1 TUI终端界面 - OpenCode深度教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <nav class="navbar">
+    <button class="mobile-menu-btn" aria-label="菜单"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    <a href="../index.html" class="navbar-brand"><div class="logo">OC</div><span>OpenCode深度教程</span></a>
+    <div class="navbar-nav"><a href="../index.html">首页</a><a href="1.1-what-is-opencode.html">教程</a><a href="../community.html">社群</a><a href="https://opencode.ai/docs" target="_blank">官方文档</a><a href="https://github.com/anomalyco/opencode" target="_blank">GitHub</a></div>
+    <div class="navbar-right">
+      <div class="search-box"><svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input type="text" class="search-input" placeholder="搜索教程..."><div class="search-results"></div></div>
+      <button class="theme-toggle" aria-label="切换主题"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button>
+    </div>
+  </nav>
+
+  <aside class="sidebar"><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">第一章：入门指南</div><ul class="sidebar-nav"><li><a href="1.1-what-is-opencode.html"><span class="chapter-number">1.1</span>什么是OpenCode</a></li><li><a href="1.2-installation.html"><span class="chapter-number">1.2</span>安装OpenCode</a></li><li><a href="1.3-quickstart.html"><span class="chapter-number">1.3</span>快速开始</a></li><li><a href="1.4-terminal-requirements.html"><span class="chapter-number">1.4</span>终端要求</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第二章：基础配置</div><ul class="sidebar-nav"><li><a href="2.1-config-file.html"><span class="chapter-number">2.1</span>配置文件详解</a></li><li><a href="2.2-providers.html"><span class="chapter-number">2.2</span>AI提供商配置</a></li><li><a href="2.3-models.html"><span class="chapter-number">2.3</span>模型选择与配置</a></li><li><a href="2.4-environment.html"><span class="chapter-number">2.4</span>环境变量设置</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第三章：界面操作</div><ul class="sidebar-nav"><li><a href="3.1-tui.html" class="active"><span class="chapter-number">3.1</span>TUI终端界面</a></li><li><a href="3.2-cli.html"><span class="chapter-number">3.2</span>CLI命令行接口</a></li><li><a href="3.3-web.html"><span class="chapter-number">3.3</span>Web界面</a></li><li><a href="3.4-ide.html"><span class="chapter-number">3.4</span>IDE集成</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第四章：核心功能</div><ul class="sidebar-nav"><li><a href="4.1-tools.html"><span class="chapter-number">4.1</span>内置工具详解</a></li><li><a href="4.2-commands.html"><span class="chapter-number">4.2</span>斜杠命令</a></li><li><a href="4.3-keybinds.html"><span class="chapter-number">4.3</span>快捷键参考</a></li><li><a href="4.4-file-reference.html"><span class="chapter-number">4.4</span>文件引用与搜索</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第五章：高级配置</div><ul class="sidebar-nav"><li><a href="5.1-agents.html"><span class="chapter-number">5.1</span>Agents代理系统</a></li><li><a href="5.2-rules.html"><span class="chapter-number">5.2</span>Rules规则配置</a></li><li><a href="5.3-themes.html"><span class="chapter-number">5.3</span>主题配置</a></li><li><a href="5.4-permissions.html"><span class="chapter-number">5.4</span>权限系统</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第六章：扩展功能</div><ul class="sidebar-nav"><li><a href="6.1-lsp.html"><span class="chapter-number">6.1</span>LSP语言服务器</a></li><li><a href="6.2-formatters.html"><span class="chapter-number">6.2</span>代码格式化器</a></li><li><a href="6.3-custom-commands.html"><span class="chapter-number">6.3</span>自定义命令</a></li><li><a href="6.4-mcp.html"><span class="chapter-number">6.4</span>MCP协议服务器</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第七章：开发与集成</div><ul class="sidebar-nav"><li><a href="7.1-sdk.html"><span class="chapter-number">7.1</span>SDK使用指南</a></li><li><a href="7.2-network.html"><span class="chapter-number">7.2</span>网络配置</a></li><li><a href="7.3-enterprise.html"><span class="chapter-number">7.3</span>企业版功能</a></li><li><a href="7.4-troubleshooting.html"><span class="chapter-number">7.4</span>故障排除</a></li></ul></div></div></aside>
+
+  <main class="main-content">
+    <nav class="breadcrumb">
+      <a href="../index.html">首页</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="3.1-tui.html">第三章</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>TUI终端界面</span>
+    </nav>
+
+    <article>
+      <header class="article-header">
+        <h1 class="article-title">3.1 TUI终端界面</h1>
+        <div class="article-meta">
+          <span class="tag">界面</span>
+          <span>第三章：界面操作</span>
+        </div>
+      </header>
+
+      <div class="article-content">
+        <p>OpenCode的TUI（Terminal User Interface）是主要的交互界面，在终端中提供丰富的功能和流畅的体验。</p>
+
+        <h2>启动TUI</h2>
+        <pre><code># 在当前目录启动
+opencode
+
+# 指定工作目录
+opencode /path/to/project</code></pre>
+
+        <h2>文件引用</h2>
+        <p>使用 <code>@</code> 符号引用项目文件：</p>
+        <pre><code>@src/main.js 帮我解释这个文件</code></pre>
+        <p>输入 <code>@</code> 后会触发模糊搜索，自动匹配文件。也可以指定行号：</p>
+        <pre><code>@File#L37-42  # 引用37-42行</code></pre>
+
+        <h2>执行Shell命令</h2>
+        <p>使用 <code>!</code> 前缀执行命令，输出作为上下文提供给AI：</p>
+        <pre><code>!ls -la
+!git status
+!npm run test</code></pre>
+
+        <h2>主要斜杠命令</h2>
+        <table>
+          <thead><tr><th>命令</th><th>功能</th><th>快捷键</th></tr></thead>
+          <tbody>
+            <tr><td><code>/connect</code></td><td>添加提供商认证</td><td>—</td></tr>
+            <tr><td><code>/compact</code></td><td>压缩会话上下文</td><td><code>ctrl+x c</code></td></tr>
+            <tr><td><code>/details</code></td><td>切换工具执行详情</td><td><code>ctrl+x d</code></td></tr>
+            <tr><td><code>/editor</code></td><td>打开外部编辑器</td><td><code>ctrl+x e</code></td></tr>
+            <tr><td><code>/export</code></td><td>导出为Markdown</td><td><code>ctrl+x x</code></td></tr>
+            <tr><td><code>/models</code></td><td>列出可用模型</td><td><code>ctrl+x m</code></td></tr>
+            <tr><td><code>/new</code></td><td>开始新会话</td><td><code>ctrl+x n</code></td></tr>
+            <tr><td><code>/sessions</code></td><td>管理会话</td><td><code>ctrl+x l</code></td></tr>
+            <tr><td><code>/share</code></td><td>分享会话</td><td><code>ctrl+x s</code></td></tr>
+            <tr><td><code>/undo</code></td><td>撤销更改</td><td><code>ctrl+x u</code></td></tr>
+            <tr><td><code>/redo</code></td><td>重做更改</td><td><code>ctrl+x r</code></td></tr>
+          </tbody>
+        </table>
+
+        <h2>模式切换</h2>
+        <p>按 <code>Tab</code> 键在两种模式间切换：</p>
+        <ul>
+          <li><strong>Build模式</strong>：完整工具访问，可修改文件</li>
+          <li><strong>Plan模式</strong>：只读分析，不修改任何文件</li>
+        </ul>
+
+        <h2>输入编辑快捷键</h2>
+        <p>支持Readline/Emacs风格的编辑：</p>
+        <table>
+          <thead><tr><th>快捷键</th><th>功能</th></tr></thead>
+          <tbody>
+            <tr><td><code>ctrl+a</code></td><td>移到行首</td></tr>
+            <tr><td><code>ctrl+e</code></td><td>移到行尾</td></tr>
+            <tr><td><code>ctrl+k</code></td><td>删除到行尾</td></tr>
+            <tr><td><code>ctrl+w</code></td><td>删除前一个词</td></tr>
+            <tr><td><code>ctrl+t</code></td><td>交换字符</td></tr>
+          </tbody>
+        </table>
+
+        <h2>TUI配置选项</h2>
+        <pre><code>{
+  "tui": {
+    "scroll_speed": 3,
+    "scroll_acceleration": {
+      "enabled": true
+    },
+    "diff_style": "unified"
+  }
+}</code></pre>
+
+        <h2>外部编辑器</h2>
+        <p>使用 <code>/editor</code> 或 <code>ctrl+x e</code> 在外部编辑器中编辑提示词。需要设置 <code>EDITOR</code> 环境变量：</p>
+        <pre><code>export EDITOR="code --wait"  # VS Code
+export EDITOR="vim"          # Vim</code></pre>
+
+        <h2>退出TUI</h2>
+        <ul>
+          <li><code>ctrl+c</code></li>
+          <li><code>ctrl+d</code></li>
+          <li><code>ctrl+x q</code>（leader键 + q）</li>
+        </ul>
+
+        <h2>下一步</h2>
+        <p>了解TUI操作后，接下来学习CLI命令行接口。</p>
+      </div>
+
+      <nav class="article-nav">
+        <a href="2.4-environment.html" class="article-nav-item prev">
+          <div class="article-nav-label">← 上一篇</div>
+          <div class="article-nav-title">2.4 环境变量设置</div>
+        </a>
+        <a href="3.2-cli.html" class="article-nav-item next">
+          <div class="article-nav-label">下一篇 →</div>
+          <div class="article-nav-title">3.2 CLI命令行接口</div>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <nav class="toc"><div class="toc-title">本页目录</div><ul class="toc-list"></ul></nav>
+  <button class="back-to-top" aria-label="回到顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenCode SDK使用指南 - 类型安全的JavaScript/TypeScript客户端">
+  <title>7.1 SDK使用指南 - OpenCode深度教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <nav class="navbar"><button class="mobile-menu-btn" aria-label="菜单"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button><a href="../index.html" class="navbar-brand"><div class="logo">OC</div><span>OpenCode深度教程</span></a><div class="navbar-nav"><a href="../index.html">首页</a><a href="1.1-what-is-opencode.html">教程</a><a href="../community.html">社群</a><a href="https://opencode.ai/docs" target="_blank">官方文档</a><a href="https://github.com/anomalyco/opencode" target="_blank">GitHub</a></div><div class="navbar-right"><div class="search-box"><svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input type="text" class="search-input" placeholder="搜索教程..."><div class="search-results"></div></div><button class="theme-toggle" aria-label="切换主题"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button></div></nav>
+  <aside class="sidebar"><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">第一章：入门指南</div><ul class="sidebar-nav"><li><a href="1.1-what-is-opencode.html"><span class="chapter-number">1.1</span>什么是OpenCode</a></li><li><a href="1.2-installation.html"><span class="chapter-number">1.2</span>安装OpenCode</a></li><li><a href="1.3-quickstart.html"><span class="chapter-number">1.3</span>快速开始</a></li><li><a href="1.4-terminal-requirements.html"><span class="chapter-number">1.4</span>终端要求</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第二章：基础配置</div><ul class="sidebar-nav"><li><a href="2.1-config-file.html"><span class="chapter-number">2.1</span>配置文件详解</a></li><li><a href="2.2-providers.html"><span class="chapter-number">2.2</span>AI提供商配置</a></li><li><a href="2.3-models.html"><span class="chapter-number">2.3</span>模型选择与配置</a></li><li><a href="2.4-environment.html"><span class="chapter-number">2.4</span>环境变量设置</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第三章：界面操作</div><ul class="sidebar-nav"><li><a href="3.1-tui.html"><span class="chapter-number">3.1</span>TUI终端界面</a></li><li><a href="3.2-cli.html"><span class="chapter-number">3.2</span>CLI命令行接口</a></li><li><a href="3.3-web.html"><span class="chapter-number">3.3</span>Web界面</a></li><li><a href="3.4-ide.html"><span class="chapter-number">3.4</span>IDE集成</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第四章：核心功能</div><ul class="sidebar-nav"><li><a href="4.1-tools.html"><span class="chapter-number">4.1</span>内置工具详解</a></li><li><a href="4.2-commands.html"><span class="chapter-number">4.2</span>斜杠命令</a></li><li><a href="4.3-keybinds.html"><span class="chapter-number">4.3</span>快捷键参考</a></li><li><a href="4.4-file-reference.html"><span class="chapter-number">4.4</span>文件引用与搜索</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第五章：高级配置</div><ul class="sidebar-nav"><li><a href="5.1-agents.html"><span class="chapter-number">5.1</span>Agents代理系统</a></li><li><a href="5.2-rules.html"><span class="chapter-number">5.2</span>Rules规则配置</a></li><li><a href="5.3-themes.html"><span class="chapter-number">5.3</span>主题配置</a></li><li><a href="5.4-permissions.html"><span class="chapter-number">5.4</span>权限系统</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第六章：扩展功能</div><ul class="sidebar-nav"><li><a href="6.1-lsp.html"><span class="chapter-number">6.1</span>LSP语言服务器</a></li><li><a href="6.2-formatters.html"><span class="chapter-number">6.2</span>代码格式化器</a></li><li><a href="6.3-custom-commands.html"><span class="chapter-number">6.3</span>自定义命令</a></li><li><a href="6.4-mcp.html"><span class="chapter-number">6.4</span>MCP协议服务器</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第七章：开发与集成</div><ul class="sidebar-nav"><li><a href="7.1-sdk.html" class="active"><span class="chapter-number">7.1</span>SDK使用指南</a></li><li><a href="7.2-network.html"><span class="chapter-number">7.2</span>网络配置</a></li><li><a href="7.3-enterprise.html"><span class="chapter-number">7.3</span>企业版功能</a></li><li><a href="7.4-troubleshooting.html"><span class="chapter-number">7.4</span>故障排除</a></li></ul></div></div></aside>
+  <main class="main-content">
+    <nav class="breadcrumb"><a href="../index.html">首页</a><span class="breadcrumb-separator">/</span><a href="7.1-sdk.html">第七章</a><span class="breadcrumb-separator">/</span><span>SDK使用指南</span></nav>
+    <article>
+      <header class="article-header"><h1 class="article-title">7.1 SDK使用指南</h1><div class="article-meta"><span class="tag">开发与集成</span><span>第七章：开发与集成</span></div></header>
+      <div class="article-content">
+        <p>OpenCode提供了类型安全的JavaScript/TypeScript SDK，让开发者能够以编程方式与OpenCode进行交互。</p>
+
+        <h2>SDK概述</h2>
+        <p>OpenCode SDK是一个完全类型安全的客户端库，提供以下特性：</p>
+        <ul>
+          <li>完整的TypeScript类型支持</li>
+          <li>自动处理与OpenCode服务器的通信</li>
+          <li>支持会话管理、文件操作、配置等功能</li>
+          <li>事件驱动的实时更新机制</li>
+        </ul>
+
+        <h2>安装方法</h2>
+        <p>使用npm或其他包管理器安装SDK：</p>
+        <pre><code># 使用npm安装
+npm install @opencode/sdk
+
+# 使用yarn安装
+yarn add @opencode/sdk
+
+# 使用pnpm安装
+pnpm add @opencode/sdk</code></pre>
+
+        <h2>创建客户端</h2>
+        <p>导入并创建OpenCode客户端实例：</p>
+        <pre><code>import { createClient } from "@opencode/sdk";
+
+// 创建客户端（自动连接到本地OpenCode服务器）
+const client = createClient();
+
+// 或者指定自定义URL
+const client = createClient({
+  url: "http://localhost:8080"
+});</code></pre>
+
+        <h2>主要API模块</h2>
+        <p>SDK提供了多个功能模块，覆盖OpenCode的所有核心功能：</p>
+
+        <h3>Global - 全局状态</h3>
+        <p>获取OpenCode的全局状态信息：</p>
+        <pre><code>// 获取全局状态
+const state = await client.global.get();
+
+console.log(state.version);  // OpenCode版本
+console.log(state.cwd);      // 当前工作目录
+console.log(state.app);      // 应用状态</code></pre>
+
+        <h3>Sessions - 会话管理</h3>
+        <p>创建、管理和操作会话：</p>
+        <pre><code>// 列出所有会话
+const sessions = await client.session.list();
+
+// 创建新会话
+const session = await client.session.create();
+
+// 获取特定会话
+const session = await client.session.get(sessionId);
+
+// 在会话中发送消息
+await client.session.chat(sessionId, {
+  message: "帮我创建一个React组件"
+});
+
+// 中止正在进行的会话
+await client.session.abort(sessionId);
+
+// 删除会话
+await client.session.delete(sessionId);</code></pre>
+
+        <h3>Files - 文件操作</h3>
+        <p>读取和管理项目文件：</p>
+        <pre><code>// 列出目录内容
+const files = await client.file.list("/src");
+
+// 读取文件内容
+const content = await client.file.read("/src/main.ts");
+
+// 搜索文件
+const results = await client.file.search("config");</code></pre>
+
+        <h3>Config - 配置管理</h3>
+        <p>读取和修改OpenCode配置：</p>
+        <pre><code>// 获取当前配置
+const config = await client.config.get();
+
+// 更新配置
+await client.config.update({
+  provider: {
+    default: "anthropic"
+  }
+});</code></pre>
+
+        <h3>TUI - 终端界面控制</h3>
+        <p>控制TUI界面的行为：</p>
+        <pre><code>// 获取TUI状态
+const tuiState = await client.tui.get();
+
+// 发送输入
+await client.tui.input("hello");
+
+// 模拟按键
+await client.tui.keypress("enter");</code></pre>
+
+        <h3>Auth - 认证管理</h3>
+        <p>管理API密钥和认证状态：</p>
+        <pre><code>// 获取认证状态
+const authStatus = await client.auth.status();
+
+// 检查特定提供商的认证状态
+const isAuthenticated = await client.auth.check("anthropic");</code></pre>
+
+        <h3>Events - 事件订阅</h3>
+        <p>订阅实时事件更新：</p>
+        <pre><code>// 订阅会话事件
+client.events.on("session.message", (event) => {
+  console.log("新消息:", event.content);
+});
+
+// 订阅工具调用事件
+client.events.on("tool.call", (event) => {
+  console.log("工具调用:", event.tool, event.args);
+});
+
+// 订阅错误事件
+client.events.on("error", (error) => {
+  console.error("错误:", error);
+});</code></pre>
+
+        <h2>会话管理最佳实践</h2>
+        <p>高效管理会话的推荐做法：</p>
+        <pre><code>import { createClient } from "@opencode/sdk";
+
+async function runCodingSession() {
+  const client = createClient();
+
+  // 创建新会话
+  const session = await client.session.create();
+  console.log("会话ID:", session.id);
+
+  // 监听消息事件
+  client.events.on("session.message", (event) => {
+    if (event.sessionId === session.id) {
+      console.log("AI:", event.content);
+    }
+  });
+
+  // 发送编码请求
+  await client.session.chat(session.id, {
+    message: "创建一个简单的Express服务器",
+    files: ["package.json"]  // 附加文件上下文
+  });
+
+  // 等待完成后继续对话
+  await client.session.chat(session.id, {
+    message: "添加一个健康检查端点"
+  });
+}
+
+runCodingSession();</code></pre>
+
+        <h2>搜索功能</h2>
+        <p>使用SDK进行代码和文件搜索：</p>
+        <pre><code>// 文件名搜索
+const files = await client.file.search("component");
+
+// 内容搜索（grep）
+const matches = await client.file.grep({
+  pattern: "useState",
+  path: "/src",
+  fileTypes: ["ts", "tsx"]
+});
+
+// 符号搜索（需要LSP支持）
+const symbols = await client.file.symbols({
+  query: "handleClick",
+  kind: "function"
+});</code></pre>
+
+        <div class="tip-box info">
+          <div class="tip-box-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>提示</div>
+          <div class="tip-box-content">SDK需要OpenCode服务器在后台运行。确保已启动OpenCode或使用 <code>opencode serve</code> 命令启动服务器模式。</div>
+        </div>
+
+        <h2>完整示例</h2>
+        <pre><code>import { createClient } from "@opencode/sdk";
+
+async function main() {
+  const client = createClient();
+
+  // 获取全局状态
+  const global = await client.global.get();
+  console.log(`OpenCode v${global.version}`);
+  console.log(`工作目录: ${global.cwd}`);
+
+  // 列出现有会话
+  const sessions = await client.session.list();
+  console.log(`现有会话数: ${sessions.length}`);
+
+  // 创建新会话并发送消息
+  const session = await client.session.create();
+
+  await client.session.chat(session.id, {
+    message: "分析当前项目的结构并给出改进建议"
+  });
+
+  // 订阅实时更新
+  client.events.on("session.complete", (event) => {
+    if (event.sessionId === session.id) {
+      console.log("会话完成！");
+    }
+  });
+}
+
+main().catch(console.error);</code></pre>
+
+        <h2>下一步</h2>
+        <p>接下来学习OpenCode的网络配置，包括代理设置和认证方法。</p>
+      </div>
+      <nav class="article-nav">
+        <a href="6.4-mcp.html" class="article-nav-item prev"><div class="article-nav-label">← 上一篇</div><div class="article-nav-title">6.4 MCP协议服务器</div></a>
+        <a href="7.2-network.html" class="article-nav-item next"><div class="article-nav-label">下一篇 →</div><div class="article-nav-title">7.2 网络配置</div></a>
+      </nav>
+    </article>
+  </main>
+  <nav class="toc"><div class="toc-title">本页目录</div><ul class="toc-list"></ul></nav>
+  <button class="back-to-top" aria-label="回到顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

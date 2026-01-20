@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenCode配置文件详解 - 配置文件格式、位置和优先级">
+  <title>2.1 配置文件详解 - OpenCode深度教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <nav class="navbar">
+    <button class="mobile-menu-btn" aria-label="菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+    <a href="../index.html" class="navbar-brand">
+      <div class="logo">OC</div>
+      <span>OpenCode深度教程</span>
+    </a>
+    <div class="navbar-nav">
+      <a href="../index.html">首页</a>
+      <a href="1.1-what-is-opencode.html">教程</a>
+      <a href="../community.html">社群</a><a href="https://opencode.ai/docs" target="_blank">官方文档</a>
+      <a href="https://github.com/anomalyco/opencode" target="_blank">GitHub</a>
+    </div>
+    <div class="navbar-right">
+      <div class="search-box">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" placeholder="搜索教程...">
+        <div class="search-results"></div>
+      </div>
+      <button class="theme-toggle" aria-label="切换主题">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <aside class="sidebar">
+    <div class="sidebar-content">
+      <div class="sidebar-section">
+        <div class="sidebar-title">第一章：入门指南</div>
+        <ul class="sidebar-nav">
+          <li><a href="1.1-what-is-opencode.html"><span class="chapter-number">1.1</span>什么是OpenCode</a></li>
+          <li><a href="1.2-installation.html"><span class="chapter-number">1.2</span>安装OpenCode</a></li>
+          <li><a href="1.3-quickstart.html"><span class="chapter-number">1.3</span>快速开始</a></li>
+          <li><a href="1.4-terminal-requirements.html"><span class="chapter-number">1.4</span>终端要求</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第二章：基础配置</div>
+        <ul class="sidebar-nav">
+          <li><a href="2.1-config-file.html" class="active"><span class="chapter-number">2.1</span>配置文件详解</a></li>
+          <li><a href="2.2-providers.html"><span class="chapter-number">2.2</span>AI提供商配置</a></li>
+          <li><a href="2.3-models.html"><span class="chapter-number">2.3</span>模型选择与配置</a></li>
+          <li><a href="2.4-environment.html"><span class="chapter-number">2.4</span>环境变量设置</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第三章：界面操作</div>
+        <ul class="sidebar-nav">
+          <li><a href="3.1-tui.html"><span class="chapter-number">3.1</span>TUI终端界面</a></li>
+          <li><a href="3.2-cli.html"><span class="chapter-number">3.2</span>CLI命令行接口</a></li>
+          <li><a href="3.3-web.html"><span class="chapter-number">3.3</span>Web界面</a></li>
+          <li><a href="3.4-ide.html"><span class="chapter-number">3.4</span>IDE集成</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第四章：核心功能</div>
+        <ul class="sidebar-nav">
+          <li><a href="4.1-tools.html"><span class="chapter-number">4.1</span>内置工具详解</a></li>
+          <li><a href="4.2-commands.html"><span class="chapter-number">4.2</span>斜杠命令</a></li>
+          <li><a href="4.3-keybinds.html"><span class="chapter-number">4.3</span>快捷键参考</a></li>
+          <li><a href="4.4-file-reference.html"><span class="chapter-number">4.4</span>文件引用与搜索</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第五章：高级配置</div>
+        <ul class="sidebar-nav">
+          <li><a href="5.1-agents.html"><span class="chapter-number">5.1</span>Agents代理系统</a></li>
+          <li><a href="5.2-rules.html"><span class="chapter-number">5.2</span>Rules规则配置</a></li>
+          <li><a href="5.3-themes.html"><span class="chapter-number">5.3</span>主题配置</a></li>
+          <li><a href="5.4-permissions.html"><span class="chapter-number">5.4</span>权限系统</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第六章：扩展功能</div>
+        <ul class="sidebar-nav">
+          <li><a href="6.1-lsp.html"><span class="chapter-number">6.1</span>LSP语言服务器</a></li>
+          <li><a href="6.2-formatters.html"><span class="chapter-number">6.2</span>代码格式化器</a></li>
+          <li><a href="6.3-custom-commands.html"><span class="chapter-number">6.3</span>自定义命令</a></li>
+          <li><a href="6.4-mcp.html"><span class="chapter-number">6.4</span>MCP协议服务器</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第七章：开发与集成</div>
+        <ul class="sidebar-nav">
+          <li><a href="7.1-sdk.html"><span class="chapter-number">7.1</span>SDK使用指南</a></li>
+          <li><a href="7.2-network.html"><span class="chapter-number">7.2</span>网络配置</a></li>
+          <li><a href="7.3-enterprise.html"><span class="chapter-number">7.3</span>企业版功能</a></li>
+          <li><a href="7.4-troubleshooting.html"><span class="chapter-number">7.4</span>故障排除</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <nav class="breadcrumb">
+      <a href="../index.html">首页</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="2.1-config-file.html">第二章</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>配置文件详解</span>
+    </nav>
+
+    <article>
+      <header class="article-header">
+        <h1 class="article-title">2.1 配置文件详解</h1>
+        <div class="article-meta">
+          <span class="tag">配置</span>
+          <span>第二章：基础配置</span>
+        </div>
+      </header>
+
+      <div class="article-content">
+        <p>OpenCode使用JSON/JSONC格式的配置文件，支持多层级配置合并，让你可以灵活地管理全局和项目级别的设置。</p>
+
+        <h2>配置文件格式</h2>
+        <p>OpenCode接受<strong>JSON</strong>和<strong>JSONC</strong>（JSON with Comments）两种格式。配置文件可以包含<code>$schema</code>引用以获得编辑器智能提示：</p>
+
+        <pre><code>{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "anthropic/claude-sonnet-4-20250514",
+  "theme": "tokyonight"
+}</code></pre>
+
+        <h2>配置文件位置与优先级</h2>
+        <p>OpenCode按以下顺序查找和合并配置文件（后面的覆盖前面的）：</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>优先级</th>
+              <th>位置</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1（最低）</td>
+              <td><code>.well-known/opencode</code></td>
+              <td>远程配置</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><code>~/.config/opencode/opencode.json</code></td>
+              <td>全局配置</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><code>OPENCODE_CONFIG</code> 环境变量</td>
+              <td>自定义配置路径</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>项目根目录 <code>opencode.json</code></td>
+              <td>项目配置</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><code>.opencode</code> 目录</td>
+              <td>项目配置目录</td>
+            </tr>
+            <tr>
+              <td>6（最高）</td>
+              <td><code>OPENCODE_CONFIG_CONTENT</code> 环境变量</td>
+              <td>内联配置</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="tip-box info">
+          <div class="tip-box-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            配置合并规则
+          </div>
+          <div class="tip-box-content">
+            配置文件是<strong>合并</strong>而不是替换的。这意味着你可以在全局配置中设置默认值，在项目配置中只覆盖需要修改的部分。
+          </div>
+        </div>
+
+        <h2>核心配置项</h2>
+
+        <h3>模型与提供商</h3>
+        <pre><code>{
+  // 主要使用的LLM模型
+  "model": "anthropic/claude-sonnet-4-20250514",
+
+  // 用于轻量任务的小模型
+  "small_model": "anthropic/claude-haiku-3-5",
+
+  // 提供商特定选项
+  "provider": {
+    "anthropic": {
+      "options": {
+        "baseURL": "https://api.anthropic.com/v1"
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>界面设置</h3>
+        <pre><code>{
+  // 主题选择
+  "theme": "tokyonight",
+
+  // TUI界面选项
+  "tui": {
+    "scroll_speed": 3,
+    "diff_style": "unified"
+  },
+
+  // 服务器配置
+  "server": {
+    "port": 4096,
+    "hostname": "127.0.0.1"
+  }
+}</code></pre>
+
+        <h3>工具配置</h3>
+        <pre><code>{
+  // 启用/禁用特定工具
+  "tools": {
+    "bash": true,
+    "write": true,
+    "edit": true,
+    "webfetch": true
+  }
+}</code></pre>
+
+        <h3>代理配置</h3>
+        <pre><code>{
+  // 自定义代理
+  "agent": {
+    "review": {
+      "description": "代码审查专家",
+      "mode": "subagent",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "tools": {
+        "write": false,
+        "bash": false
+      }
+    }
+  },
+
+  // 默认代理
+  "default_agent": "build"
+}</code></pre>
+
+        <h3>命令配置</h3>
+        <pre><code>{
+  // 自定义命令
+  "command": {
+    "test": {
+      "template": "运行项目的测试套件并报告结果",
+      "description": "运行测试"
+    },
+    "review": {
+      "template": "审查 $ARGUMENTS 中的代码更改",
+      "description": "代码审查"
+    }
+  }
+}</code></pre>
+
+        <h3>快捷键配置</h3>
+        <pre><code>{
+  // 自定义快捷键
+  "keybinds": {
+    "leader": "ctrl+x",
+    "app_exit": "ctrl+c",
+    "session_new": "<leader>n",
+    "model_list": "<leader>m"
+  }
+}</code></pre>
+
+        <h2>高级配置</h2>
+
+        <h3>MCP服务器</h3>
+        <pre><code>{
+  "mcp": {
+    "servers": {
+      "filesystem": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/dir"]
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>格式化器</h3>
+        <pre><code>{
+  "formatter": {
+    "prettier": {
+      "command": ["npx", "prettier", "--write", "$FILE"],
+      "extensions": [".js", ".ts", ".jsx", ".tsx"]
+    }
+  }
+}</code></pre>
+
+        <h3>权限配置</h3>
+        <pre><code>{
+  "permission": {
+    "bash": "ask",
+    "edit": "allow",
+    "read": "allow",
+    "webfetch": "ask"
+  }
+}</code></pre>
+
+        <h3>其他配置</h3>
+        <pre><code>{
+  // 自动更新设置
+  "autoupdate": true,  // true | false | "notify"
+
+  // 分享设置
+  "share": "manual",  // "manual" | "auto" | "disabled"
+
+  // 上下文压缩
+  "compaction": {
+    "enabled": true
+  },
+
+  // 文件监视忽略
+  "watcher": {
+    "ignore": ["node_modules", ".git", "dist"]
+  },
+
+  // 指令文件路径
+  "instructions": ["docs/guidelines.md", "AGENTS.md"]
+}</code></pre>
+
+        <h2>变量替换</h2>
+        <p>配置文件支持变量替换：</p>
+
+        <h3>环境变量</h3>
+        <pre><code>{
+  "provider": {
+    "openai": {
+      "options": {
+        "apiKey": "{env:OPENAI_API_KEY}"
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>文件内容</h3>
+        <pre><code>{
+  "instructions": ["{file:./prompts/system.md}"]
+}</code></pre>
+
+        <h2>配置示例</h2>
+
+        <h3>完整的全局配置示例</h3>
+        <pre><code>{
+  "$schema": "https://opencode.ai/config.json",
+
+  // 模型配置
+  "model": "anthropic/claude-sonnet-4-20250514",
+  "small_model": "anthropic/claude-haiku-3-5",
+
+  // 界面配置
+  "theme": "tokyonight",
+  "tui": {
+    "scroll_speed": 3
+  },
+
+  // 工具权限
+  "permission": {
+    "bash": "ask",
+    "edit": "allow",
+    "read": "allow"
+  },
+
+  // 自定义命令
+  "command": {
+    "commit": {
+      "template": "查看git diff并生成commit message",
+      "description": "生成commit message"
+    }
+  },
+
+  // 快捷键
+  "keybinds": {
+    "leader": "ctrl+x"
+  },
+
+  // 自动更新
+  "autoupdate": "notify"
+}</code></pre>
+
+        <h2>下一步</h2>
+        <p>了解配置文件结构后，接下来让我们详细了解如何配置AI提供商。</p>
+      </div>
+
+      <nav class="article-nav">
+        <a href="1.4-terminal-requirements.html" class="article-nav-item prev">
+          <div class="article-nav-label">← 上一篇</div>
+          <div class="article-nav-title">1.4 终端要求</div>
+        </a>
+        <a href="2.2-providers.html" class="article-nav-item next">
+          <div class="article-nav-label">下一篇 →</div>
+          <div class="article-nav-title">2.2 AI提供商配置</div>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <nav class="toc">
+    <div class="toc-title">本页目录</div>
+    <ul class="toc-list"></ul>
+  </nav>
+
+  <button class="back-to-top" aria-label="回到顶部">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

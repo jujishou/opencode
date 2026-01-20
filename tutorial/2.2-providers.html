@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenCode AI提供商配置 - 配置各种AI提供商和API密钥">
+  <title>2.2 AI提供商配置 - OpenCode深度教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <nav class="navbar">
+    <button class="mobile-menu-btn" aria-label="菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+    <a href="../index.html" class="navbar-brand">
+      <div class="logo">OC</div>
+      <span>OpenCode深度教程</span>
+    </a>
+    <div class="navbar-nav">
+      <a href="../index.html">首页</a>
+      <a href="1.1-what-is-opencode.html">教程</a>
+      <a href="../community.html">社群</a><a href="https://opencode.ai/docs" target="_blank">官方文档</a>
+      <a href="https://github.com/anomalyco/opencode" target="_blank">GitHub</a>
+    </div>
+    <div class="navbar-right">
+      <div class="search-box">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" placeholder="搜索教程...">
+        <div class="search-results"></div>
+      </div>
+      <button class="theme-toggle" aria-label="切换主题">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <aside class="sidebar">
+    <div class="sidebar-content">
+      <div class="sidebar-section">
+        <div class="sidebar-title">第一章：入门指南</div>
+        <ul class="sidebar-nav">
+          <li><a href="1.1-what-is-opencode.html"><span class="chapter-number">1.1</span>什么是OpenCode</a></li>
+          <li><a href="1.2-installation.html"><span class="chapter-number">1.2</span>安装OpenCode</a></li>
+          <li><a href="1.3-quickstart.html"><span class="chapter-number">1.3</span>快速开始</a></li>
+          <li><a href="1.4-terminal-requirements.html"><span class="chapter-number">1.4</span>终端要求</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第二章：基础配置</div>
+        <ul class="sidebar-nav">
+          <li><a href="2.1-config-file.html"><span class="chapter-number">2.1</span>配置文件详解</a></li>
+          <li><a href="2.2-providers.html" class="active"><span class="chapter-number">2.2</span>AI提供商配置</a></li>
+          <li><a href="2.3-models.html"><span class="chapter-number">2.3</span>模型选择与配置</a></li>
+          <li><a href="2.4-environment.html"><span class="chapter-number">2.4</span>环境变量设置</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第三章：界面操作</div>
+        <ul class="sidebar-nav">
+          <li><a href="3.1-tui.html"><span class="chapter-number">3.1</span>TUI终端界面</a></li>
+          <li><a href="3.2-cli.html"><span class="chapter-number">3.2</span>CLI命令行接口</a></li>
+          <li><a href="3.3-web.html"><span class="chapter-number">3.3</span>Web界面</a></li>
+          <li><a href="3.4-ide.html"><span class="chapter-number">3.4</span>IDE集成</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第四章：核心功能</div>
+        <ul class="sidebar-nav">
+          <li><a href="4.1-tools.html"><span class="chapter-number">4.1</span>内置工具详解</a></li>
+          <li><a href="4.2-commands.html"><span class="chapter-number">4.2</span>斜杠命令</a></li>
+          <li><a href="4.3-keybinds.html"><span class="chapter-number">4.3</span>快捷键参考</a></li>
+          <li><a href="4.4-file-reference.html"><span class="chapter-number">4.4</span>文件引用与搜索</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第五章：高级配置</div>
+        <ul class="sidebar-nav">
+          <li><a href="5.1-agents.html"><span class="chapter-number">5.1</span>Agents代理系统</a></li>
+          <li><a href="5.2-rules.html"><span class="chapter-number">5.2</span>Rules规则配置</a></li>
+          <li><a href="5.3-themes.html"><span class="chapter-number">5.3</span>主题配置</a></li>
+          <li><a href="5.4-permissions.html"><span class="chapter-number">5.4</span>权限系统</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第六章：扩展功能</div>
+        <ul class="sidebar-nav">
+          <li><a href="6.1-lsp.html"><span class="chapter-number">6.1</span>LSP语言服务器</a></li>
+          <li><a href="6.2-formatters.html"><span class="chapter-number">6.2</span>代码格式化器</a></li>
+          <li><a href="6.3-custom-commands.html"><span class="chapter-number">6.3</span>自定义命令</a></li>
+          <li><a href="6.4-mcp.html"><span class="chapter-number">6.4</span>MCP协议服务器</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">第七章：开发与集成</div>
+        <ul class="sidebar-nav">
+          <li><a href="7.1-sdk.html"><span class="chapter-number">7.1</span>SDK使用指南</a></li>
+          <li><a href="7.2-network.html"><span class="chapter-number">7.2</span>网络配置</a></li>
+          <li><a href="7.3-enterprise.html"><span class="chapter-number">7.3</span>企业版功能</a></li>
+          <li><a href="7.4-troubleshooting.html"><span class="chapter-number">7.4</span>故障排除</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <nav class="breadcrumb">
+      <a href="../index.html">首页</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="2.1-config-file.html">第二章</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>AI提供商配置</span>
+    </nav>
+
+    <article>
+      <header class="article-header">
+        <h1 class="article-title">2.2 AI提供商配置</h1>
+        <div class="article-meta">
+          <span class="tag">配置</span>
+          <span>第二章：基础配置</span>
+        </div>
+      </header>
+
+      <div class="article-content">
+        <p>OpenCode支持<strong>75+个LLM提供商</strong>，通过AI SDK和Models.dev集成，让你可以选择最适合的模型进行开发。</p>
+
+        <h2>配置流程</h2>
+        <ol>
+          <li>使用 <code>/connect</code> 命令添加API密钥</li>
+          <li>在 <code>opencode.json</code> 中配置提供商选项</li>
+          <li>使用 <code>/models</code> 命令选择要使用的模型</li>
+        </ol>
+
+        <p>认证信息存储在 <code>~/.local/share/opencode/auth.json</code> 文件中。</p>
+
+        <h2>主要提供商</h2>
+
+        <h3>商业平台</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>提供商</th>
+              <th>主要模型</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Anthropic</strong></td>
+              <td>Claude 4 Opus, Claude 4 Sonnet</td>
+              <td>推荐使用，代码能力强</td>
+            </tr>
+            <tr>
+              <td><strong>OpenAI</strong></td>
+              <td>GPT-5, GPT-4o</td>
+              <td>通用能力强</td>
+            </tr>
+            <tr>
+              <td><strong>Google</strong></td>
+              <td>Gemini 3 Pro</td>
+              <td>多模态支持好</td>
+            </tr>
+            <tr>
+              <td><strong>Amazon Bedrock</strong></td>
+              <td>多种模型</td>
+              <td>AWS集成</td>
+            </tr>
+            <tr>
+              <td><strong>Azure OpenAI</strong></td>
+              <td>GPT系列</td>
+              <td>企业级支持</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>专业AI服务</h3>
+        <ul>
+          <li><strong>Groq</strong> - 超快推理速度</li>
+          <li><strong>DeepSeek</strong> - 高性价比</li>
+          <li><strong>xAI</strong> - Grok系列模型</li>
+          <li><strong>Together AI</strong> - 开源模型托管</li>
+          <li><strong>Fireworks AI</strong> - 快速推理</li>
+          <li><strong>OpenRouter</strong> - 统一API网关</li>
+        </ul>
+
+        <h3>本地模型</h3>
+        <ul>
+          <li><strong>Ollama</strong> - 本地模型运行</li>
+          <li><strong>LM Studio</strong> - 桌面模型管理</li>
+          <li><strong>llama.cpp</strong> - 高性能本地推理</li>
+        </ul>
+
+        <h2>使用 /connect 命令</h2>
+        <p>在OpenCode TUI中运行 <code>/connect</code> 命令，会显示提供商列表：</p>
+        <pre><code>/connect</code></pre>
+
+        <p>选择提供商后，根据提示输入API密钥。</p>
+
+        <div class="tip-box">
+          <div class="tip-box-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            推荐
+          </div>
+          <div class="tip-box-content">
+            新手推荐使用 <strong>OpenCode Zen</strong>，通过 <a href="https://opencode.ai/auth" target="_blank">opencode.ai/auth</a> 认证即可使用，无需单独配置API密钥。
+          </div>
+        </div>
+
+        <h2>提供商配置示例</h2>
+
+        <h3>Anthropic配置</h3>
+        <pre><code>{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "anthropic/claude-sonnet-4-20250514",
+  "provider": {
+    "anthropic": {
+      "options": {
+        "baseURL": "https://api.anthropic.com/v1"
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>OpenAI配置</h3>
+        <pre><code>{
+  "model": "openai/gpt-4o",
+  "provider": {
+    "openai": {
+      "options": {
+        "baseURL": "https://api.openai.com/v1"
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>Azure OpenAI配置</h3>
+        <pre><code>{
+  "model": "azure/gpt-4o",
+  "provider": {
+    "azure": {
+      "options": {
+        "baseURL": "https://your-resource.openai.azure.com",
+        "apiVersion": "2024-02-15-preview"
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>Ollama本地配置</h3>
+        <pre><code>{
+  "model": "ollama/llama3.2",
+  "provider": {
+    "ollama": {
+      "options": {
+        "baseURL": "http://localhost:11434"
+      }
+    }
+  }
+}</code></pre>
+
+        <h2>自定义提供商</h2>
+        <p>OpenCode支持任何兼容OpenAI API的提供商：</p>
+        <pre><code>{
+  "provider": {
+    "custom": {
+      "id": "my-provider",
+      "options": {
+        "baseURL": "https://api.my-provider.com/v1",
+        "apiKey": "{env:MY_PROVIDER_API_KEY}"
+      },
+      "models": {
+        "my-model": {
+          "id": "my-model-v1",
+          "name": "My Custom Model"
+        }
+      }
+    }
+  }
+}</code></pre>
+
+        <h2>认证方式</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>认证方式</th>
+              <th>适用提供商</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>API密钥</td>
+              <td>大多数提供商</td>
+              <td>最常见的认证方式</td>
+            </tr>
+            <tr>
+              <td>OAuth</td>
+              <td>GitHub Copilot, GitLab</td>
+              <td>浏览器授权</td>
+            </tr>
+            <tr>
+              <td>环境变量</td>
+              <td>AWS, Google Cloud</td>
+              <td>云服务认证</td>
+            </tr>
+            <tr>
+              <td>服务账户</td>
+              <td>Google Vertex AI</td>
+              <td>JSON密钥文件</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>管理提供商</h2>
+
+        <h3>禁用提供商</h3>
+        <pre><code>{
+  "disabled_providers": ["openai", "google"]
+}</code></pre>
+
+        <h3>只启用特定提供商</h3>
+        <pre><code>{
+  "enabled_providers": ["anthropic", "ollama"]
+}</code></pre>
+
+        <h2>查看可用模型</h2>
+        <p>使用CLI命令查看所有可用模型：</p>
+        <pre><code>opencode models</code></pre>
+
+        <p>或指定提供商：</p>
+        <pre><code>opencode models anthropic</code></pre>
+
+        <div class="tip-box warning">
+          <div class="tip-box-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            安全提示
+          </div>
+          <div class="tip-box-content">
+            不要将API密钥直接写入配置文件。使用环境变量或 <code>/connect</code> 命令管理密钥更安全。
+          </div>
+        </div>
+
+        <h2>下一步</h2>
+        <p>配置好提供商后，接下来让我们了解如何选择和配置具体的模型。</p>
+      </div>
+
+      <nav class="article-nav">
+        <a href="2.1-config-file.html" class="article-nav-item prev">
+          <div class="article-nav-label">← 上一篇</div>
+          <div class="article-nav-title">2.1 配置文件详解</div>
+        </a>
+        <a href="2.3-models.html" class="article-nav-item next">
+          <div class="article-nav-label">下一篇 →</div>
+          <div class="article-nav-title">2.3 模型选择与配置</div>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <nav class="toc">
+    <div class="toc-title">本页目录</div>
+    <ul class="toc-list"></ul>
+  </nav>
+
+  <button class="back-to-top" aria-label="回到顶部">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

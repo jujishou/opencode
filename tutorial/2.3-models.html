@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenCode模型选择与配置 - 选择和配置AI模型">
+  <title>2.3 模型选择与配置 - OpenCode深度教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <nav class="navbar">
+    <button class="mobile-menu-btn" aria-label="菜单"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    <a href="../index.html" class="navbar-brand"><div class="logo">OC</div><span>OpenCode深度教程</span></a>
+    <div class="navbar-nav">
+      <a href="../index.html">首页</a>
+      <a href="1.1-what-is-opencode.html">教程</a>
+      <a href="../community.html">社群</a><a href="https://opencode.ai/docs" target="_blank">官方文档</a>
+      <a href="https://github.com/anomalyco/opencode" target="_blank">GitHub</a>
+    </div>
+    <div class="navbar-right">
+      <div class="search-box">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" placeholder="搜索教程...">
+        <div class="search-results"></div>
+      </div>
+      <button class="theme-toggle" aria-label="切换主题"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button>
+    </div>
+  </nav>
+
+  <aside class="sidebar"><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">第一章：入门指南</div><ul class="sidebar-nav"><li><a href="1.1-what-is-opencode.html"><span class="chapter-number">1.1</span>什么是OpenCode</a></li><li><a href="1.2-installation.html"><span class="chapter-number">1.2</span>安装OpenCode</a></li><li><a href="1.3-quickstart.html"><span class="chapter-number">1.3</span>快速开始</a></li><li><a href="1.4-terminal-requirements.html"><span class="chapter-number">1.4</span>终端要求</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第二章：基础配置</div><ul class="sidebar-nav"><li><a href="2.1-config-file.html"><span class="chapter-number">2.1</span>配置文件详解</a></li><li><a href="2.2-providers.html"><span class="chapter-number">2.2</span>AI提供商配置</a></li><li><a href="2.3-models.html" class="active"><span class="chapter-number">2.3</span>模型选择与配置</a></li><li><a href="2.4-environment.html"><span class="chapter-number">2.4</span>环境变量设置</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第三章：界面操作</div><ul class="sidebar-nav"><li><a href="3.1-tui.html"><span class="chapter-number">3.1</span>TUI终端界面</a></li><li><a href="3.2-cli.html"><span class="chapter-number">3.2</span>CLI命令行接口</a></li><li><a href="3.3-web.html"><span class="chapter-number">3.3</span>Web界面</a></li><li><a href="3.4-ide.html"><span class="chapter-number">3.4</span>IDE集成</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第四章：核心功能</div><ul class="sidebar-nav"><li><a href="4.1-tools.html"><span class="chapter-number">4.1</span>内置工具详解</a></li><li><a href="4.2-commands.html"><span class="chapter-number">4.2</span>斜杠命令</a></li><li><a href="4.3-keybinds.html"><span class="chapter-number">4.3</span>快捷键参考</a></li><li><a href="4.4-file-reference.html"><span class="chapter-number">4.4</span>文件引用与搜索</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第五章：高级配置</div><ul class="sidebar-nav"><li><a href="5.1-agents.html"><span class="chapter-number">5.1</span>Agents代理系统</a></li><li><a href="5.2-rules.html"><span class="chapter-number">5.2</span>Rules规则配置</a></li><li><a href="5.3-themes.html"><span class="chapter-number">5.3</span>主题配置</a></li><li><a href="5.4-permissions.html"><span class="chapter-number">5.4</span>权限系统</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第六章：扩展功能</div><ul class="sidebar-nav"><li><a href="6.1-lsp.html"><span class="chapter-number">6.1</span>LSP语言服务器</a></li><li><a href="6.2-formatters.html"><span class="chapter-number">6.2</span>代码格式化器</a></li><li><a href="6.3-custom-commands.html"><span class="chapter-number">6.3</span>自定义命令</a></li><li><a href="6.4-mcp.html"><span class="chapter-number">6.4</span>MCP协议服务器</a></li></ul></div><div class="sidebar-section"><div class="sidebar-title">第七章：开发与集成</div><ul class="sidebar-nav"><li><a href="7.1-sdk.html"><span class="chapter-number">7.1</span>SDK使用指南</a></li><li><a href="7.2-network.html"><span class="chapter-number">7.2</span>网络配置</a></li><li><a href="7.3-enterprise.html"><span class="chapter-number">7.3</span>企业版功能</a></li><li><a href="7.4-troubleshooting.html"><span class="chapter-number">7.4</span>故障排除</a></li></ul></div></div></aside>
+
+  <main class="main-content">
+    <nav class="breadcrumb">
+      <a href="../index.html">首页</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="2.1-config-file.html">第二章</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>模型选择与配置</span>
+    </nav>
+
+    <article>
+      <header class="article-header">
+        <h1 class="article-title">2.3 模型选择与配置</h1>
+        <div class="article-meta">
+          <span class="tag">配置</span>
+          <span>第二章：基础配置</span>
+        </div>
+      </header>
+
+      <div class="article-content">
+        <p>OpenCode通过AI SDK和Models.dev集成了75+个LLM提供商，支持商业和本地模型。选择合适的模型对编程效率至关重要。</p>
+
+        <h2>推荐模型</h2>
+        <p>以下模型在代码生成和工具调用方面表现优秀：</p>
+        <table>
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>提供商</th>
+              <th>特点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Claude 4 Opus</strong></td>
+              <td>Anthropic</td>
+              <td>最强代码能力，深度推理</td>
+            </tr>
+            <tr>
+              <td><strong>Claude 4 Sonnet</strong></td>
+              <td>Anthropic</td>
+              <td>性价比高，速度快</td>
+            </tr>
+            <tr>
+              <td><strong>GPT-5</strong></td>
+              <td>OpenAI</td>
+              <td>全能型，支持好</td>
+            </tr>
+            <tr>
+              <td><strong>Gemini 3 Pro</strong></td>
+              <td>Google</td>
+              <td>长上下文，多模态</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>设置默认模型</h2>
+        <p>在 <code>opencode.json</code> 中配置：</p>
+        <pre><code>{
+  "model": "anthropic/claude-sonnet-4-20250514"
+}</code></pre>
+        <p>格式为 <code>provider_id/model_id</code>。</p>
+
+        <h2>模型选择优先级</h2>
+        <p>OpenCode按以下顺序确定使用的模型：</p>
+        <ol>
+          <li>命令行参数 <code>--model</code> 或 <code>-m</code></li>
+          <li>配置文件设置</li>
+          <li>上次使用的模型</li>
+          <li>第一个可用模型</li>
+        </ol>
+
+        <h2>运行时切换模型</h2>
+        <p>在TUI中使用 <code>/models</code> 命令或快捷键 <code>ctrl+x m</code>：</p>
+        <pre><code>/models</code></pre>
+        <p>使用 <code>F2</code> / <code>Shift+F2</code> 快速在最近使用的模型间切换。</p>
+
+        <h2>模型变体</h2>
+        <p>某些模型支持不同的配置变体：</p>
+        <pre><code>{
+  "provider": {
+    "anthropic": {
+      "models": {
+        "claude-sonnet-4-20250514": {
+          "options": {
+            "thinkingBudget": "high"  // "high" | "max"
+          }
+        }
+      }
+    },
+    "openai": {
+      "models": {
+        "o1-preview": {
+          "options": {
+            "reasoningEffort": "high"  // "low" | "medium" | "high"
+          }
+        }
+      }
+    }
+  }
+}</code></pre>
+        <p>使用 <code>variant_cycle</code> 快捷键切换变体。</p>
+
+        <h2>小模型配置</h2>
+        <p>为轻量任务配置专用小模型：</p>
+        <pre><code>{
+  "model": "anthropic/claude-sonnet-4-20250514",
+  "small_model": "anthropic/claude-haiku-3-5"
+}</code></pre>
+
+        <h2>命令行指定模型</h2>
+        <pre><code># 临时使用特定模型
+opencode -m anthropic/claude-opus-4-20250514
+
+# 非交互模式
+opencode run -m openai/gpt-4o "解释这段代码"</code></pre>
+
+        <h2>查看可用模型</h2>
+        <pre><code># 查看所有模型
+opencode models
+
+# 查看特定提供商
+opencode models anthropic
+
+# 刷新模型列表
+opencode models --refresh</code></pre>
+
+        <div class="tip-box info">
+          <div class="tip-box-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            选择建议
+          </div>
+          <div class="tip-box-content">
+            <ul>
+              <li>复杂任务：Claude 4 Opus / GPT-5</li>
+              <li>日常开发：Claude 4 Sonnet / GPT-4o</li>
+              <li>快速响应：Claude Haiku / GPT-4o-mini</li>
+              <li>隐私优先：Ollama本地模型</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>下一步</h2>
+        <p>了解模型配置后，接下来学习环境变量设置。</p>
+      </div>
+
+      <nav class="article-nav">
+        <a href="2.2-providers.html" class="article-nav-item prev">
+          <div class="article-nav-label">← 上一篇</div>
+          <div class="article-nav-title">2.2 AI提供商配置</div>
+        </a>
+        <a href="2.4-environment.html" class="article-nav-item next">
+          <div class="article-nav-label">下一篇 →</div>
+          <div class="article-nav-title">2.4 环境变量设置</div>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <nav class="toc"><div class="toc-title">本页目录</div><ul class="toc-list"></ul></nav>
+  <button class="back-to-top" aria-label="回到顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+  <script src="../js/main.js"></script>
+</body>
+</html>
