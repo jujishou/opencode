@@ -1,6 +1,56 @@
 /* OpenCode 深度教程 - 主样式文件 */
 /* 基于 Claude Code 教程网站风格设计 */
 
+/* ===== 性能优化 ===== */
+
+/* 字体渲染优化 */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 图片懒加载占位样式 */
+img[loading="lazy"] {
+  background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+img[loading="lazy"][src] {
+  animation: none;
+  background: none;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* will-change 性能提示 */
+.sidebar {
+  will-change: transform;
+}
+
+.back-to-top {
+  will-change: opacity, visibility, transform;
+}
+
+.feature-card,
+.article-nav-item,
+.btn {
+  will-change: transform;
+}
+
+/* 减少重绘的过渡效果 */
+.theme-toggle,
+.search-input,
+.navbar-nav a {
+  will-change: background-color, border-color, color;
+}
+
+/* ===== 主题变量 ===== */
+
 :root {
   /* 主题色 */
   --primary-color: #10b981;

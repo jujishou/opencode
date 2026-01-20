@@ -1,0 +1,30 @@
+# OpenCode深度教程 robots.txt
+# https://opencode.aialiang.com
+
+User-agent: *
+Allow: /
+
+# 站点地图
+Sitemap: https://opencode.aialiang.com/sitemap.xml
+
+# 爬取延迟（秒）
+Crawl-delay: 1
+
+# 允许所有搜索引擎访问
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Bytespider
+Allow: /

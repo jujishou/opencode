@@ -4,11 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="OpenCode深度教程 - 从入门到精通的完全指南。全面讲解OpenCode的安装、配置、命令、快捷键、Agents、MCP协议等核心功能。">
-  <meta name="keywords" content="OpenCode, AI编程助手, 终端工具, 代码生成, Claude, GPT, LLM, 教程">
+  <meta name="keywords" content="OpenCode, AI编程助手, 终端工具, 代码生成, Claude, GPT, LLM, 教程, AI编程, 开源工具">
   <meta name="author" content="OpenCode深度教程">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
   <title>OpenCode深度教程 - 从入门到精通的完全指南</title>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://opencode.aialiang.com/">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://opencode.aialiang.com/">
+  <meta property="og:title" content="OpenCode深度教程 - 从入门到精通的完全指南">
+  <meta property="og:description" content="专为开发者打造的OpenCode终极文档指南。从环境配置到构建自定义AI智能体，帮助您掌握下一代编程工具，提升3倍开发效率。">
+  <meta property="og:image" content="https://opencode.aialiang.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="OpenCode深度教程">
+  <meta property="og:locale" content="zh_CN">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenCode深度教程 - 从入门到精通的完全指南">
+  <meta name="twitter:description" content="专为开发者打造的OpenCode终极文档指南。从环境配置到构建自定义AI智能体，帮助您掌握下一代编程工具。">
+  <meta name="twitter:image" content="https://opencode.aialiang.com/images/og-image.png">
+
+  <!-- DNS Prefetch & Preconnect -->
+  <link rel="dns-prefetch" href="//opencode.ai">
+  <link rel="dns-prefetch" href="//github.com">
+  <link rel="preconnect" href="https://opencode.ai" crossorigin>
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "OpenCode深度教程",
+    "url": "https://opencode.aialiang.com/",
+    "description": "OpenCode深度教程 - 从入门到精通的完全指南",
+    "inLanguage": "zh-CN",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://opencode.aialiang.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OpenCode深度教程",
+    "url": "https://opencode.aialiang.com/",
+    "logo": "https://opencode.aialiang.com/images/logo.png",
+    "sameAs": [
+      "https://github.com/anomalyco/opencode"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "OpenCode教程章节",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "第一章：入门指南", "url": "https://opencode.aialiang.com/tutorial/1.1-what-is-opencode.html"},
+      {"@type": "ListItem", "position": 2, "name": "第二章：基础配置", "url": "https://opencode.aialiang.com/tutorial/2.1-config-file.html"},
+      {"@type": "ListItem", "position": 3, "name": "第三章：界面操作", "url": "https://opencode.aialiang.com/tutorial/3.1-tui.html"},
+      {"@type": "ListItem", "position": 4, "name": "第四章：核心功能", "url": "https://opencode.aialiang.com/tutorial/4.1-tools.html"},
+      {"@type": "ListItem", "position": 5, "name": "第五章：高级配置", "url": "https://opencode.aialiang.com/tutorial/5.1-agents.html"},
+      {"@type": "ListItem", "position": 6, "name": "第六章：扩展功能", "url": "https://opencode.aialiang.com/tutorial/6.1-lsp.html"},
+      {"@type": "ListItem", "position": 7, "name": "第七章：开发与集成", "url": "https://opencode.aialiang.com/tutorial/7.1-sdk.html"}
+    ]
+  }
+  </script>
   <style>
     /* 首页Hero区域样式覆盖 */
     .hero.hero-new.hero-split {
@@ -320,7 +393,7 @@
       <div class="hero-qr-section">
         <div class="hero-qr-card">
           <div class="hero-qr-image">
-            <img src="images/qr_xhs.png" alt="小红书二维码">
+            <img src="images/qr_xhs.png" alt="小红书二维码" width="100" height="100" loading="lazy">
           </div>
           <div class="hero-qr-info">
             <span class="qr-label">📕 小红书</span>
@@ -329,7 +402,7 @@
         </div>
         <div class="hero-qr-card">
           <div class="hero-qr-image">
-            <img src="images/个人微信.jpg" alt="微信二维码">
+            <img src="images/个人微信.jpg" alt="微信二维码" width="100" height="100" loading="lazy">
           </div>
           <div class="hero-qr-info">
             <span class="qr-label">💬 微信</span>

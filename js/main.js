@@ -1,5 +1,91 @@
 // OpenCode 深度教程 - 主JavaScript文件
 
+// ===== 懒加载 Polyfill =====
+// 为不支持 loading="lazy" 的浏览器提供兼容性
+(function() {
+  if ('loading' in HTMLImageElement.prototype) {
+    // 浏览器原生支持懒加载，无需处理
+    return;
+  }
+
+  // Polyfill: 使用 IntersectionObserver 实现懒加载
+  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+          }
+          img.removeAttribute('loading');
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px 0px',
+      threshold: 0.01
+    });
+
+    lazyImages.forEach(img => {
+      if (img.src) {
+        img.dataset.src = img.src;
+        img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E';
+      }
+      imageObserver.observe(img);
+    });
+  } else {
+    // 最终回退：直接加载所有图片
+    lazyImages.forEach(img => {
+      img.removeAttribute('loading');
+    });
+  }
+})();
+
+// ===== 下一页预加载 =====
+// 当用户接近页面底部时，预加载下一页
+function initNextPagePreload() {
+  const nextLink = document.querySelector('.article-nav-item.next');
+  if (!nextLink) return;
+
+  const nextHref = nextLink.getAttribute('href');
+  if (!nextHref) return;
+
+  let preloaded = false;
+
+  const preloadNextPage = () => {
+    if (preloaded) return;
+
+    // 检查用户是否滚动到页面底部 80%
+    const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+
+    if (scrollPercent > 0.8) {
+      preloaded = true;
+
+      // 创建预加载链接
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = nextHref;
+      link.as = 'document';
+      document.head.appendChild(link);
+
+      // 移除滚动监听
+      window.removeEventListener('scroll', preloadNextPage);
+    }
+  };
+
+  // 使用节流函数优化滚动性能
+  let scrollTimeout;
+  window.addEventListener('scroll', () => {
+    if (scrollTimeout) return;
+    scrollTimeout = setTimeout(() => {
+      preloadNextPage();
+      scrollTimeout = null;
+    }, 100);
+  }, { passive: true });
+}
+
 // 获取链接前缀（根据当前页面位置）
 function getLinkPrefix() {
   const path = window.location.pathname;
@@ -90,6 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initTOC();
   initMobileMenu();
   highlightCurrentPage();
+  initNextPagePreload();
 });
 
 // 主题初始化
